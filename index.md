@@ -1,14 +1,14 @@
 # User Scenario - The Characters
 
-##•	Who is your target user?
+## •	Who is your target user?
 
 We believe our primary user base to be the everyday commuter who makes use of a particular route on a daily basis in order to notify the user of any events on their way, the traffic conditions and provide an alternate route if available, thereby helping them to not only save time by avoiding a certain route but also provide an alternate route to reach their destination. The application is not limited to the mentioned type of users, but can be used generally by anyone who wishes to be notified about any events along their route
 
-##•	Why are they important?
+## •	Why are they important?
 
 The target users, as mentioned are the everyday men and women who are the workforce of this city. We believe in making their daily commute a bit easier and tension free so that they can concentrate solely on their work and not worrying about getting to work or coming back home
 
-##•	What problem are you solving for them?
+## •	What problem are you solving for them?
 
 The primary problem of our target users we aim to solve is that of avoiding unnecessary traffic. Usually, most daily commuters may use an application that provides them the route to their destination and also frequent commuters who are well versed with the route may not use any application at all. The problem with both these approaches are neither of them are aware of any events along their route which might have led to a high traffic scenario which eventually may result in the user stuck in traffic and getting late to work, getting home or simply put, reaching their destination. Our application helps them avoid this by notifying them about any events along their way, details about the event such as capacity and an estimation of the number of vehicles, start time and probable end time of the event, and most importantly an alternate if available so that they can reach their destination
 
