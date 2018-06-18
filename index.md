@@ -33,7 +33,7 @@ Syntax highlighted code block
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and 
-![Image]( nhriday.github.io/1.jpeg )
+![AppLogo]( nhriday.github.io/1.jpeg )
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
