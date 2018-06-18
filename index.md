@@ -1,5 +1,5 @@
 # User Scenario - The Characters
-
+![AppLogo]( nhriday.github.io/1.jpeg )
 ## •	Who is your target user?
 
 We believe our primary user base to be the everyday commuter who makes use of a particular route on a daily basis in order to notify the user of any events on their way, the traffic conditions and provide an alternate route if available, thereby helping them to not only save time by avoiding a certain route but also provide an alternate route to reach their destination. The application is not limited to the mentioned type of users, but can be used generally by anyone who wishes to be notified about any events along their route
