@@ -42,14 +42,11 @@ We have a database which consists of the following information of the events: -
 ### Technology
 
 **Front-end:**
-  * Android
-   - Our front-end client is written in Android, which is an interface to help the user navigate through the application. 
-  * Maps SDK
-   - SDK used to manage access to Google Maps server and display the map layout in our client (application)
+  * Android - Our front-end client is written in Android, which is an interface to help the user navigate through the application. 
+  * Maps SDK - SDK used to manage access to Google Maps server and display the map layout in our client (application)
   * Google Places API
    - API used to get automated suggestions from Google Maps when a user types in the name of a location. It also helps in                       obtaining the geo-locations of the searched location
-  * AwesomeSplash
-   - used to create a custom splash screen, the screen that pops up when the app icon is clicked on. A library developed by Viktor Arsovski and is available at https://github.com/ViksaaSkool/AwesomeSplash 
+  * AwesomeSplash - used to create a custom splash screen, the screen that pops up when the app icon is clicked on. A library developed by Viktor Arsovski and is available at https://github.com/ViksaaSkool/AwesomeSplash 
 
 **Back-end:** 
   * Flask Server
