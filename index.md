@@ -25,7 +25,7 @@ We have developed a web API using flask which runs on the localhost of the serve
 As our application is basically a route providing service or a map application, the best reference point for us was Google Maps. It is available to the public domain and can be utilized effectively. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
-![AppLogo]( nhriday.github.io/process.JPG )
+![ProcessFlow]( nhriday.github.io/process.JPG )
 
 
 **Client - Server**
@@ -39,58 +39,78 @@ We have a database which consists of the following information of the events: -
 *	Capacity of the venue
 
  
-**Technology**
+### Technology
 
-*	Front-end:
-  *Android
+**Front-end:**
+  * Android
    - Our front-end client is written in Android, which is an interface to help the user navigate through the application. 
-  *Maps SDK
+  * Maps SDK
    - SDK used to manage access to Google Maps server and display the map layout in our client (application)
-  *Google Places API
+  * Google Places API
    - API used to get automated suggestions from Google Maps when a user types in the name of a location. It also helps in                       obtaining the geo-locations of the searched location
-  *AwesomeSplash
+  * AwesomeSplash
    - used to create a custom splash screen, the screen that pops up when the app icon is clicked on. A library developed by Viktor Arsovski and is available at https://github.com/ViksaaSkool/AwesomeSplash 
 
-*	Back-end: 
-  *Flask Server
+**Back-end:** 
+  * Flask Server
    – handle the requests from the client and call the Google Maps API for relevant information regarding routes and return the event details by accessing the database depending on the request, which is the date and time entered by the user or system time by default and the route information returned from the Google Maps API
 
-  *mySQL database
+  * mySQL database
    – stores all structured event data including venue, start time, title, capacity primarily
 
-*	Data: What data resources are you going to use and how will you access, collect, and store them?
+  *	Data: What data resources are you going to use and how will you access, collect, and store them?
 Ticketmaster API using python and store relevant data in the database
 
+# Evaluation: The Reviews
 
-### Markdown
+**What does success look like for your system?**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+A user enters a preferred source and destination using our application, in 
+return the following is available on the display -:
+-	A route to the destination
+-	Event markers along the route
+-	Notifications to the user about the traffic conditions
+-	Event info including title, time details, capacity of the venue
+-	Traffic conditions close to the start/end time of the event
+-	Alternate route(s) if available
+This would be a successful system
 
-```markdown
-Syntax highlighted code block
+**How will you evaluate the system that you built?**
 
-# Header 1
-## Header 2
-### Header 3
+We plan on evaluating our system during a live large-scale event at which we believe our system can be evaluated thoroughly. The event we have planned to evaluate our system at is a cricket match between India and Ireland at the Malahide Cricket Club Ground in Dublin
 
-- Bulleted
-- List
+# Conclusion: The Plan
 
-1. Numbered
-2. List
+**Project management strategy**
 
-**Bold** and _Italic_ and `Code` text
+We are following the Agile project management strategy. We are following a system where we have two-week sprints. Each of us have a specific task assigned and the scrum master (Mehul Singh) is the buffer for any type of information exchange. The following illustration represents the process flow
 
-[Link](url) and 
-![AppLogo]( nhriday.github.io/1.jpeg )
-```
+![Sprint]( nhriday.github.io/sprints.JPG )
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+In addition to the above sprints, we discuss the progress and issues at least every two days over text messaging or Skype. At the end of each week, all of us make sure we meet face to face at UCD mostly to discuss the progress and get ready for the next sprint. Initially we divided ourselves into two teams of 2 and 3 to work on front-end and back-end development respectively. After the second sprint, the whole team took on the responsibility of writing the report and readying the presentation. All 5 of us met at the end of the second sprint and gave inputs on what each of them worked on and came up with the report and the presentation.
 
-### Jekyll Themes
+**Biggest challenges**
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nhriday/nhriday.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+The challenge we believe is obtaining the accurate routes in order for the commuter to be able to use it effectively. Google Maps Direction API for Android does not provide routes and navigation information. We cannot get the routes by calling the Google Maps on the phone, only the Maps JavaScript API provides the routes.
 
-### Support or Contact
+We plan to overcome it by sending the geolocation data from the Google Places API to the server to make API calls instead of making HttpConnections to call the API by the client. This helps us to send back the exact route data back to the client by drawing polylines on the map. Obtaining the geo-locations also helps us to provide alternate routes.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**Roadmap**
+
+![Roadmap]( nhriday.github.io/roadmap.JPG )
+
+# Resources
+•	List of resources (software, papers, tutorials, books, stats, business indicators)
+-	Github
+-	https://github.com/ViksaaSkool/AwesomeSplash
+-	https://pages.github.com
+-	http://flask.pocoo.org/docs/1.0
+-	https://www.tutorialspoint.com/flask
+-	https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+-	https://developer.ticketmaster.com/
+-	https://developers.google.com/maps/documentation/
+-	Android Studio
+-	Jupyter Notebook
+-	Youtube
+-	Google
+-	Stack Overflow
