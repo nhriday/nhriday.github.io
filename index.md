@@ -27,6 +27,8 @@ As our application is basically a route providing service or a map application, 
 # Technical Solution: The Plot 
 ![ProcessFlow]( nhriday.github.io/process.JPG )
 
+<img src="https://github.com/nhriday/nhriday.github.io/blob/master/Open.gif" width="200" height="400" />
+
 
 **Client - Server**
 The very first step is the user entering the source and destination of the commute planned. This is done on our Android client to set the two parameters. This request is sent to our back-end server, where the server interacts with the Google direction API to obtain the geo-locations of the locations requested from the client. Using these geo-locations, a route to the preferred destination is displayed on the screen. The server communicates with a back-end database to collect information on events relevant to the route on which the user plans to commute and sends it back to the serve as a response. The server sends all this information, routes and event information back to the client
