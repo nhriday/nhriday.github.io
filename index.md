@@ -27,7 +27,8 @@ As our application is basically a route providing service or a map application, 
 # Technical Solution: The Plot 
 ![ProcessFlow]( nhriday.github.io/process.JPG )
 
-<img src="https://github.com/nhriday/nhriday.github.io/blob/master/Open.gif" width="200" height="400" />
+![Open](https://github.com/nhriday/nhriday.github.io/blob/master/Open.gif) {:height="36px" width="36px"}
+
 
 
 **Client - Server**
