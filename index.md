@@ -27,7 +27,7 @@ As our application is basically a route providing service or a map application, 
 # Technical Solution: The Plot 
 ![ProcessFlow]( nhriday.github.io/process.JPG )
 
-![Open](https://github.com/nhriday/nhriday.github.io/blob/master/Open.gif) {:height="36px" width="36px"}
+![Open](https://github.com/nhriday/nhriday.github.io/blob/master/Open.gif)
 
 
 
