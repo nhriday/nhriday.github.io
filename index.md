@@ -1,27 +1,33 @@
 # User Scenario - The Characters
-### •	Who is your target user?
+### 	Who is your target user?
 
-We believe our primary user base to be the everyday commuter who makes use of a particular route on a daily basis in order to notify the user of any events on their way, the traffic conditions and provide an alternate route if available, thereby helping them to not only save time by avoiding a certain route but also provide an alternate route to reach their destination. The application is not limited to the mentioned type of users, but can be used generally by anyone who wishes to be notified about any events along their route
+We believe our primary user base to be of two categories,
 
-### •	Why are they important?
+- The everyday commuter, who makes use of a particular route on a daily basis in order to notify the user of any events on their way, the traffic conditions and provide an alternate route if available, thereby helping them to not only save time by avoiding a certain route but also provide an alternate route to reach their destination.
+
+- The tourist, who is not aware of any events in and around the city. Tourists usually have their whole trip planned, they have plans for each and every day of their trip and even the slightest disturbance to the plan due to traffic along their route because of a music concert or a big sports event can damper their whole day and eventually the trip altogether. If notified of the traffic and information about the event ahead, we believe our application can be a major help in making a tourist’s time in Dublin hassle free.
+
+That being said, the application is not limited to the mentioned type of users, but can be used generally by anyone who wishes to be notified about any events along their route
+
+### 	Why are they important?
 
 The target users, as mentioned are the everyday men and women who are the workforce of this city. We believe in making their daily commute a bit easier and tension free so that they can concentrate solely on their work and not worrying about getting to work or coming back home
 
-### •	What problem are you solving for them?
+### 	What problem are you solving for them?
 
 The primary problem of our target users we aim to solve is that of avoiding unnecessary traffic. Usually, most daily commuters may use an application that provides them the route to their destination and also frequent commuters who are well versed with the route may not use any application at all. The problem with both these approaches are neither of them are aware of any events along their route which might have led to a high traffic scenario which eventually may result in the user stuck in traffic and getting late to work, getting home or simply put, reaching their destination. Our application helps them avoid this by notifying them about any events along their way, details about the event such as capacity and an estimation of the number of vehicles, start time and probable end time of the event, and most importantly an alternate if available so that they can reach their destination
 
 # Technical Problem: The Setting 
 
-### •	Why does your system exist? 
+### 	Why does your system exist? 
 
 When we first set out to develop this application, we had two reference points. Ticketmaster and Google Maps. Ticketmaster is a website that sells tickets for almost every event in Ireland, specifically Dublin as we are building a database that consists of events in Dublin. Google Maps is an application used by almost everyone to reach their destination and its use ranges right from taking a walk to planning a trip. We believe our system exists as an effective culmination of the best features of the two applications
 
-### •	What is the core technical problem? 
+### 	What is the core technical problem? 
 We have developed a web API using flask which runs on the localhost of the server (provided by UCD). The problem with this is, it is not available on the public domain and we cannot access it in the application. We are facing a few minor issues with hosting it on the public domain and should be able to overcome it for the Mid-Term presentation
 
 
-### •	Can you review other existing systems or products that address this problem? 
+### 	Can you review other existing systems or products that address this problem? 
 As our application is basically a route providing service or a map application, the best reference point for us was Google Maps. It is available to the public domain and can be utilized effectively. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
