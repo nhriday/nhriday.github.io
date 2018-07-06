@@ -21,7 +21,7 @@ The target users, as mentioned
 
 Traffic is a major issue in Dublin, here are a few news articles on the effect of traffic that also served as a great motivating factor for our project.
 
-![Traffic1]( nhriday.github.io/1.png )
+![Traffic1]( nhriday.github.io/1.1.png )
 
 “On average, commuters said they spent approximately 43 minutes each way on their daily commute to Dublin city. Over a year, this averages out to 14 days behind the wheel and some say the proposed changes could add 10 days to the existing total”
 
