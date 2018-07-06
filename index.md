@@ -50,12 +50,24 @@ The primary problem of our target users we aim to solve is that of avoiding unne
 
 When we first set out to develop this application, we had two reference points. Ticketmaster and Google Maps. Ticketmaster is a website that sells tickets for almost every event in Ireland, specifically Dublin as we are building a database that consists of events in Dublin. Google Maps is an application used by almost everyone to reach their destination and its use ranges right from taking a walk to planning a trip. We believe our system exists as an effective culmination of the best features of the two applications
 
-### 	What is the core technical problem? 
-We have developed a web API using flask which runs on the localhost of the server (provided by UCD). The problem with this is, it is not available on the public domain and we cannot access it in the application. We are facing a few minor issues with hosting it on the public domain and should be able to overcome it for the Mid-Term presentation
+### 	Challenges
+  - **Estimate end time** – The ticketmaster API does not give us the end time of the events, only the starting times. We estimated the end time of the events based on the type of event, capacity of the venue and historical data for the large venues.
+
+  - **Predict traffic with radius** – The primary logic behind notifying the user about the event and the traffic around it, is the route of the user being in a specific vicinity or area around the venue. We decided to define an estimated area around the event by calculating the radius for a specific distance. This was done with help of a website ‘www.freemaptools.com’. The website allows us to enter the geographical co-ordinates of the venue and also the required radius and then draws an area around the location. We plan to use this to estimate the radius and notify the user about the event and the traffic around it.
+
+Along with the radius, we also came up with something known as Pre-start time – in case of larger events, which is our primary target to predict traffic, the traffic will be higher or start to increase maybe an hour or two before the start of the event; and Post-end time – similarly, the traffic is high after an hour or two after the event has ended. We used this time difference to predict the traffic based on the type of events.
+
+  - **Accessing Flask through our client** – The web API written in flask to process requests from the server, is to be accessed by public ports which were not made available by UCD. In order to access it using the public internet we need access to the ports on the server. We communicated with IT services in solving this problem.
+ 
+  - **Data Refresh** – The data from ticketmaster API is unstructured and inconsistent. We encountered a lot of missing values including names of venues and events, capacity of the venue, starting time and other information. We carefully filled in the missing values by referring other entries and historical data. 
+
+
+  - **Locating venue along the route** – Locating the venue along the route is one of the primary objectives of the application. We plan to do this by calculating the distance between the geographical points of the venue and the points on the route to make sure it is as accurate as possible. The geolocations are obtained using Google Places API and subsequently used to calculate the distance
+
 
 
 ### 	Can you review other existing systems or products that address this problem? 
-As our application is basically a route providing service or a map application, the best reference point for us was Google Maps. It is available to the public domain and can be utilized effectively. We plan to emulate the service provided by Google Maps in our own unique perspective
+  - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
 ![ProcessFlow]( nhriday.github.io/process.JPG )
