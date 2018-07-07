@@ -88,7 +88,7 @@ Along with the radius, we also came up with something known as Pre-start time �
   * mySQL database
    – stores all structured event data including venue, start time, title, capacity primarily
 
-  *	Data: Ticketmaster API 
+  *	Ticketmaster API 
    – Information about events was extracted using Python. We used python's ‘urllib’ package and request method to scrape out the data from the Tickermaster API. Data was scraped page wise during each call to the API server which returned 20 events per call.
 
 **The Process**
@@ -123,7 +123,7 @@ The MySQL database stores data obtained by the Ticketmaster API to get the infor
 
 •	Start-up – Click on the EventGPS app icon, the following screen is shown on the screen containing the app logo
 
-![]
+![A1](nhriday.github.io/App1.JPG)
 
 
 # Evaluation: The Reviews
