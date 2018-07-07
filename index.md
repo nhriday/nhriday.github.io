@@ -70,24 +70,8 @@ Along with the radius, we also came up with something known as Pre-start time â€
   - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
-![ProcessFlow]( nhriday.github.io/process.JPG )
-
-![Open](https://github.com/nhriday/nhriday.github.io/blob/master/Open.gif)
-
-
-
-**Client - Server**
-The very first step is the user entering the source and destination of the commute planned. This is done on our Android client to set the two parameters. This request is sent to our back-end server, where the server interacts with the Google direction API to obtain the geo-locations of the locations requested from the client. Using these geo-locations, a route to the preferred destination is displayed on the screen. The server communicates with a back-end database to collect information on events relevant to the route on which the user plans to commute and sends it back to the serve as a response. The server sends all this information, routes and event information back to the client
-
-**Database**
-
-We have a database which consists of the following information of the events: - 
-*	Event title & Venue
-*	Start time, End time (estimated)
-*	Capacity of the venue
-
 â€ƒ
-### Technology
+### Technology Involved
 
 **Front-end:**
   * Android - Our front-end client is written in Android, which is an interface to help the user navigate through the application. 
@@ -107,6 +91,10 @@ We have a database which consists of the following information of the events: -
 
   *	Data: What data resources are you going to use and how will you access, collect, and store them?
 Ticketmaster API using python and store relevant data in the database
+
+**The Process**
+
+![ProcessFlow]( nhriday.github.io/process.JPG )
 
 # Evaluation: The Reviews
 
