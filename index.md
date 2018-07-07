@@ -70,7 +70,7 @@ Along with the radius, we also came up with something known as Pre-start time �
   - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
- ### Technology Involved ###
+ ### Technology Involved
 
 **Front-end:**
   * Android - -	Our front-end client is written in Android, which is a mobile application the user can use to interact with the system to get the desired information 
@@ -133,19 +133,19 @@ Enter Source and Destination, the route is and the event along the route is disp
 
 **Example 1** 
 
-*Source* – current location 
-*Destination* – 3 Arena
-*Result* – 1 Event(s) found along the route, 3 Arena
+• *Source* – current location 
+• *Destination* – 3 Arena
+• *Result* – 1 Event(s) found along the route, 3 Arena
 
 ![A3](nhriday.github.io/App3.JPG)
 
 **Example 2**
 
-*Source* – Rathmines 
-*Destination* – Dublin Spire
-*Result* – Currently no event
+• *Source* – Rathmines 
+• *Destination* – Dublin Spire
+• *Result* – Currently no event
 
-![A4](nhriday.github.io/App4.JPG)
+![A4](nhriday.github.io/App4.JPG)	
 
   - **Current day events** – Choose the ‘Event’ option from the sidebar and click on the event calendar button on the bottom right-hand side of the screen. The events of the day in real time are shown with markers and can be clicked upon to view the event details.
   
@@ -167,9 +167,16 @@ This would be a successful system
 
 **How will you evaluate the system that you built?**
 
-We plan on evaluating our system during a live large-scale event at which we believe our system can be evaluated thoroughly. The event we have planned to evaluate our system at is a cricket match between India and Ireland at the Malahide Cricket Club Ground in Dublin
+The primary objective of the application is to provide the user with a route to the destination, notify them about any events along the route, predict the traffic along the route and provide alternate route(s) if available. We cannot compare the application with Google Maps because we cannot get the time estimates for the first route or the alternate route.
 
-# Conclusion: The Plan
+**What exactly are we measuring?**
+
+Travelling through a defined route or a random source and destination might not seem realistic, but we believe it’s the most plausible approach to test our application to observe the accuracy of it’s predictions
+
+We plan on measuring our system during some live events. The events we evaluate at will be all types of events including a sport event, a large-scale concert being the primary targets in order to test the traffic prediction and alternate routes. We aim to measure all the points mentioned in the success criteria for our system every time the application is tested so that the core functionality of the application works efficiently. Initially evaluation runs will be carried out by each member of the team, starting off with 2 events and increasing the events based on the results of the first run and also solving any issues that might arise in the process.
+
+
+# Conclusion
 
 **Project management strategy**
 
@@ -179,13 +186,30 @@ We are following the Agile project management strategy. We are following a syste
 
 In addition to the above sprints, we discuss the progress and issues at least every two days over text messaging or Skype. At the end of each week, all of us make sure we meet face to face at UCD mostly to discuss the progress and get ready for the next sprint. Initially we divided ourselves into two teams of 2 and 3 to work on front-end and back-end development respectively. After the second sprint, the whole team took on the responsibility of writing the report and readying the presentation. All 5 of us met at the end of the second sprint and gave inputs on what each of them worked on and came up with the report and the presentation.
 
-**Biggest challenges**
+### Biggest challenges
+
+**1.	Accurate Routes:** 
 
 The challenge we believe is obtaining the accurate routes in order for the commuter to be able to use it effectively. Google Maps Direction API for Android does not provide routes and navigation information. We cannot get the routes by calling the Google Maps on the phone, only the Maps JavaScript API provides the routes.
 
 We plan to overcome it by sending the geolocation data from the Google Places API to the server to make API calls instead of making HttpConnections to call the API by the client. This helps us to send back the exact route data back to the client by drawing polylines on the map. Obtaining the geo-locations also helps us to provide alternate routes.
 
-**Roadmap**
+**2.	Data Refresh:**
+
+This is the biggest challenge we faced. To elaborate on this topic, previously mentioned in the Technical Problem  Challenges, the event data is an integral part of the whole application. These are the following observations we did while we received data from the Ticketmaster API, 
+-	The data is very inconsistent 
+-	Geo-locations of venues were missing
+-	Information about some events are available on a partner site; the user is redirected to buy the tickets and event information is available on the partner site.  
+-	Basic information including event name, time, date was missing. This is mostly for the smaller events
+-	API does not give us the capacity and end-time of the event
+-	Event details of only 1000 events can be obtained
+-	Each page contains only 20 events
+-	Almost every page has one or the other information missing
+
+We had to carefully fill up all the missing values. All of us divided the tasks among ourselves by taking up 10 pages initially and fill up as much as possible and we ended up with a complete database of events with complete event information up to November 2018. We had to refer other sources to fill up data, we referred google for the capacity of the venue, end-time was predicted by observing historical data, type of event, the popularity of the event, a deadline of the 11 pm set by Dublin City Council for a few events. Geo-locations of events were referred on Google Maps. Due to the inconsistency in the data when the API is called, it is not possible to update the data on a daily basis and provide the user with the most recent update of events.
+
+
+### Roadmap
 
 ![Roadmap]( nhriday.github.io/roadmap.JPG )
 
