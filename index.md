@@ -70,7 +70,7 @@ Along with the radius, we also came up with something known as Pre-start time �
   - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
- ### Technology Involved
+ ### Technology Involved ###
 
 **Front-end:**
   * Android - -	Our front-end client is written in Android, which is a mobile application the user can use to interact with the system to get the desired information 
@@ -119,14 +119,39 @@ The MySQL database stores data obtained by the Ticketmaster API to get the infor
 
 ![P4](nhriday.github.io/Process4.JPG)
 
-**App Walkthrough**
+### **App Walkthrough** ###
 
-•	Start-up – Click on the EventGPS app icon, the following screen is shown on the screen containing the app logo
+  -	**Start-up** – Click on the EventGPS app icon, the following screen is shown on the screen containing the app logo
 
 ![A1](nhriday.github.io/App1.JPG)
 
+  -	**Map Function** – this is the first page displayed when the app is opened, and can also be chosen from the sidebar
+ 
+![A2](nhriday.github.io/App2.JPG)
+ 
+Enter Source and Destination, the route is and the event along the route is displayed. The event is shown as a marker( ), the marker can be clicked upon to view the event details. The user will be notified whether there is an event along the route or not on the bottom of the page
 
-# Evaluation: The Reviews
+**Example 1** 
+
+*Source* – current location 
+*Destination* – 3 Arena
+*Result* – 1 Event(s) found along the route, 3 Arena
+
+![A3](nhriday.github.io/App3.JPG)
+
+**Example 2**
+
+*Source* – Rathmines 
+*Destination* – Dublin Spire
+*Result* – Currently no event
+
+![A4](nhriday.github.io/App4.JPG)
+
+  - **Current day events** – Choose the ‘Event’ option from the sidebar and click on the event calendar button on the bottom right-hand side of the screen. The events of the day in real time are shown with markers and can be clicked upon to view the event details.
+  
+![A5](nhriday.github.io/App5.JPG)
+
+# Evaluation
 
 **What does success look like for your system?**
 
