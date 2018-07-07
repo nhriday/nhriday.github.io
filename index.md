@@ -40,6 +40,7 @@ Traffic is a major issue in Dublin, here are a few news articles on the effect o
 ![Traffic5](nhriday.github.io/5.5.png)
 
 The report says, “Traffic heading into and out of certain parts of Dublin city is an absolute nightmare and unfortunately, it's going to get a lot worse as traffic is set to increase by 50,000 journeys a day in the next nine years, according to the Department of Transport.”
+
 The primary problem of our target users we aim to solve is that of avoiding unnecessary traffic. Usually, most daily commuters may use an application that provides them the route to their destination and also frequent commuters who are well versed with the route may not use any application at all. The problem with both these approaches are neither of them are aware of any events along their route which might have led to a high traffic scenario which eventually may result in the user stuck in traffic and getting late to work, getting home or simply put, reaching their destination. Our application helps them avoid this by notifying them about any events along their way, details about the event such as capacity and an estimation of the number of vehicles, start time and probable end time of the event, and most importantly an alternate if available so that they can reach their destination.
 
 
@@ -220,12 +221,15 @@ We had to carefully fill up all the missing values. All of us divided the tasks 
 According to our plan, we have 4 more sprints scheduled, each sprint task has been shown below individually,
 
 ![Roadmap1]( nhriday.github.io/RM1.JPG )
+
 ![Roadmap2]( nhriday.github.io/RM2.JPG )
+
 ![Roadmap3]( nhriday.github.io/RM3.JPG )
+
 ![Roadmap4]( nhriday.github.io/RM4.JPG )
 
 # Resources
-•	List of resources (software, papers, tutorials, books, stats, business indicators)
+
 -	Github
 -	https://github.com/ViksaaSkool/AwesomeSplash
 -	https://pages.github.com
