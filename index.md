@@ -70,17 +70,16 @@ Along with the radius, we also came up with something known as Pre-start time �
   - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
- 
-### Technology Involved
+ ### Technology Involved
 
 **Front-end:**
-  * Android - Our front-end client is written in Android, which is an interface to help the user navigate through the application. 
+  * Android - -	Our front-end client is written in Android, which is a mobile application the user can use to interact with the system to get the desired information 
  
- * Maps SDK - SDK used to manage access to Google Maps server and display the map layout in our client (application)
+ * Maps SDK for Android - SDK used to manage access to Google Maps server and display the map layout in our client (application)
  
  * Google Places API - API used to get automated suggestions from Google Maps when a user types in the name of a location. It also helps in obtaining the geo-locations of the searched location
  
- * AwesomeSplash - used to create a custom splash screen, the screen that pops up when the app icon is clicked on. A library developed by Viktor Arsovski and is available at https://github.com/ViksaaSkool/AwesomeSplash 
+ * AwesomeSplash - -	used to create a custom splash screen, which we use as a loading screen for the application. This library was developed by Viktor Arsovski.
 
 **Back-end:** 
   * Flask Server
@@ -89,8 +88,8 @@ Along with the radius, we also came up with something known as Pre-start time �
   * mySQL database
    – stores all structured event data including venue, start time, title, capacity primarily
 
-  *	Data: What data resources are you going to use and how will you access, collect, and store them?
-Ticketmaster API using python and store relevant data in the database
+  *	Data: Ticketmaster API 
+   – Information about events was extracted using Python. We used python's ‘urllib’ package and request method to scrape out the data from the Tickermaster API. Data was scraped page wise during each call to the API server which returned 20 events per call.
 
 **The Process**
 
