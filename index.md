@@ -196,7 +196,7 @@ We plan to overcome it by sending the geolocation data from the Google Places AP
 
 **2.	Data Refresh:**
 
-This is the biggest challenge we faced. To elaborate on this topic, previously mentioned in the Technical Problem  Challenges, the event data is an integral part of the whole application. These are the following observations we did while we received data from the Ticketmaster API, 
+This is the biggest challenge we faced. To elaborate on this topic, previously mentioned in the Technical Problem -- Challenges, the event data is an integral part of the whole application. These are the following observations we did while we received data from the Ticketmaster API, 
 -	The data is very inconsistent 
 -	Geo-locations of venues were missing
 -	Information about some events are available on a partner site; the user is redirected to buy the tickets and event information is available on the partner site.  
