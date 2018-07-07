@@ -213,6 +213,13 @@ We had to carefully fill up all the missing values. All of us divided the tasks 
 
 ![Roadmap]( nhriday.github.io/roadmap.JPG )
 
+According to our plan, we have 4 more sprints scheduled, each sprint task has been shown below individually,
+
+![Roadmap1]( nhriday.github.io/RM1.JPG )
+![Roadmap2]( nhriday.github.io/RM2.JPG )
+![Roadmap3]( nhriday.github.io/RM3.JPG )
+![Roadmap4]( nhriday.github.io/RM4.JPG )
+
 # Resources
 •	List of resources (software, papers, tutorials, books, stats, business indicators)
 -	Github
@@ -228,3 +235,15 @@ We had to carefully fill up all the missing values. All of us divided the tasks 
 -	Youtube
 -	Google
 -	Stack Overflow
+-	News articles - 
+
+https://www.rte.ie/news/business/2018/0316/948010-dublin-chamber-traffic/
+
+https://www.irishtimes.com/news/ireland/irish-news/time-lost-in-dublin-traffic-costs-economy-350m-per-year-1.3066581
+
+http://www.thejournal.ie/worlds-most-congested-cities-3377455-May2017/
+
+https://www.joe.ie/news/bad-news-if-you-work-or-live-in-dublin-and-you-hate-traffic-472880
+
+http://www.engineersjournal.ie/2017/06/20/dublin-congestion-e2bn-in-2033-without-corrective-action/
+
