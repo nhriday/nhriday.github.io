@@ -70,7 +70,7 @@ Along with the radius, we also came up with something known as Pre-start time �
   - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
 
 # Technical Solution: The Plot 
- ### Technology Involved
+### Technology Involved
 
 **Front-end:**
   * Android - -	Our front-end client is written in Android, which is a mobile application the user can use to interact with the system to get the desired information 
@@ -133,17 +133,21 @@ Enter Source and Destination, the route is and the event along the route is disp
 
 **Example 1** 
 
-• *Source* – current location 
-• *Destination* – 3 Arena
-• *Result* – 1 Event(s) found along the route, 3 Arena
+1. *Source* – current location 
+
+2. *Destination* – 3 Arena
+
+3. *Result* – 1 Event(s) found along the route, 3 Arena
 
 ![A3](nhriday.github.io/App3.JPG)
 
 **Example 2**
 
-• *Source* – Rathmines 
-• *Destination* – Dublin Spire
-• *Result* – Currently no event
+1. *Source* – Rathmines 
+
+2. *Destination* – Dublin Spire
+
+3. *Result* – Currently no event
 
 ![A4](nhriday.github.io/App4.JPG)	
 
