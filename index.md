@@ -94,7 +94,38 @@ Ticketmaster API using python and store relevant data in the database
 
 **The Process**
 
-![ProcessFlow]( nhriday.github.io/process.JPG )
+There are two things the user can do in the beginning, the first is the user entering the source and destination of the commute planned; the second is the user checking for all the events on the particular day. 
+
+![P1](nhriday.github.io/Process1.JPG)
+
+This request is sent to our back-end server, the client interacts with the server to get back the specific routes and event info to the user.
+
+![P2](nhriday.github.io/Process2.JPG)
+
+There is a process followed to get the routes, the server interacts with the Flask web API to do the same.
+
+-	The flask web API interacts with two entities and returns back two web pages.
+
+-	The first webpage is the routes specific to the user, by interacting with the Google direction API to obtain the geo-locations of the locations requested from the client. Using these geo-locations, a route to the preferred destination is displayed on the screen.
+
+-	The second webpage is the information about every event on the day, which is stored in the MySQL database. The web API interacts with the database to extract relevant data and sends it back to the client through the server.
+
+![P3](nhriday.github.io/Process3.JPG)
+
+The MySQL database stores data obtained by the Ticketmaster API to get the information about events including
+
+•	Event title & Venue
+•	Start time, End time (estimated)
+•	The Capacity of the venue
+
+![P4](nhriday.github.io/Process4.JPG)
+
+**App Walkthrough**
+
+•	Start-up – Click on the EventGPS app icon, the following screen is shown on the screen containing the app logo
+
+![]
+
 
 # Evaluation: The Reviews
 
