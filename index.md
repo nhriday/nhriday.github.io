@@ -255,5 +255,5 @@ https://www.joe.ie/news/bad-news-if-you-work-or-live-in-dublin-and-you-hate-traf
 
 http://www.engineersjournal.ie/2017/06/20/dublin-congestion-e2bn-in-2033-without-corrective-action/
 
-![Recording](nhriday.github.io/Data.png)
+
 
