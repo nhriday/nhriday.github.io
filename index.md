@@ -23,8 +23,6 @@ Traffic is a major issue in Dublin, here are a few news articles on the effect o
 
 ![Traffic1]( nhriday.github.io/1.1.png )
 
-![Record](https://github.com/nhriday/evaluation/blob/master/Data.png)
-
 “On average, commuters said they spent approximately 43 minutes each way on their daily commute to Dublin city. Over a year, this averages out to 14 days behind the wheel and some say the proposed changes could add 10 days to the existing total”
 
 ![Traffic2](nhriday.github.io/2.2.png)
