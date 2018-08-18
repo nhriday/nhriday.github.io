@@ -10,7 +10,7 @@ We believe our primary user base to be of two categories,
 That being said, the application is not limited to the mentioned type of users, but can be used generally by anyone who wishes to be notified about any events along their route
 
 
-<video src="https://www.youtube.com/watch?v=HC3AXQ8dPJM" width="320" height="200" controls preload></video>
+<video src="https://www.youtube.com/watch?v=HC3AXQ8dPJM" width="400" height="400" controls preload></video>
 
 ### 	Why are they important?
 
