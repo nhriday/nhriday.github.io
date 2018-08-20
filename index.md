@@ -11,6 +11,8 @@ That being said, the application is not limited to the mentioned type of users, 
 
 
 <video src="nhriday.github.io/Map1.mp4" width="400" height="400" controls preload></video>
+<video src="nhriday.github.io/screencapture-1534760887920.mp4" width="400" height="400" controls preload></video>
+
 
 ### 	Why are they important?
 
