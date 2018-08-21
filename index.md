@@ -7,6 +7,8 @@ We believe our primary user base to be of two categories,
 
 - The tourist, who is not aware of any events in and around the city. Tourists usually have their whole trip planned, they have plans for each and every day of their trip and even the slightest disturbance to the plan due to traffic along their route because of a music concert or a big sports event can damper their whole day and eventually the trip altogether. If notified of the traffic and information about the event ahead, we believe our application can be a major help in making a tourist’s time in Dublin hassle free.
 
+  A tourist can also make use of our Event feature, where all the events and related info on any particular day can be viewed by selecting the date and can redirect to Google Maps app if he/she wants to navigate to the event
+
 That being said, the application is not limited to the mentioned type of users, but can be used generally by anyone who wishes to be notified about any events along their route
 
 
@@ -67,15 +69,36 @@ Along with the radius, we also came up with something known as Pre-start time �
 
   - **Locating venue along the route** – Locating the venue along the route is one of the primary objectives of the application. We plan to do this by calculating the distance between the geographical points of the venue and the points on the route to make sure it is as accurate as possible. The geolocations are obtained using Google Places API and subsequently used to calculate the distance
 
+  - **Displaying Routes** – The routes on the application are displayed by accessing the Google Maps API. Initially, the API gave us a number of geo-points on the route we wanted. We connected those points using a straight line and displayed the route on the map. The glaring error here was that the routes were not following the corresponding road on the map. They were just a few straight lines combined together and displayed.
+
+      As a solution to this challenge, we made use of a field in the API known as ‘Polyline’, which enabled us to display the precise route lines on the map. The field was encoded, we decoded it with the help of a library called ‘Interactive Polyline Encoder Utility’. Once we could access the polyline field, we extracted a greater number of route points on the map and used it to display the routes that follow the road accurately. 
+
 
 
 ### 	Can you review other existing systems or products that address this problem? 
   - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
+  
+  - **Citymapper** – Citymapper is a crowd sourced city transit navigation app which offers a range of options to use while commuting in a city. It includes a journey planner as well. For a source and destination entered, the app also provides information on any disruptions in the route in real-time. Disruptions can be anything from road blockages to traffic congestion. The app provides routes and suggestions on how to use public transport to the destination. It does not provide directions for a commuter using a car or a motorbike.  The application does have a lot of features that would be a wonderful addition with our app, but it does not provide a solution to the specific problem we aim to solve. Moreover, this application does not operate in Ireland.
+
+  - **INRIX Traffic** – A crowd sourced application, which provides a comprehensive view of the traffic around the commuter in real-time and any events or incidents along the way. It also provides navigation to the destination. The user can also choose to view the events on the route. Compared to the AA Roadwatch app, the disruptions such as road blockages shown in the city were very few. No events were displayed in the city after choosing the event display function in the app, whereas there were events all over the city according to our app. The app is designed for major US cities and not consistent with information in Dublin. It also does not consider the traffic due to a disruption with the alternate routes it suggests.
+
+    The biggest drawback with crowd sourced applications is that the incident reported can be faked by anyone to divert traffic. Reports of people reporting fake incidents to reroute traffic around their homes has been recorded. Two students faked a traffic jam and tricked the application to reroute traffic affecting thousands of commuters.
+
+  - **AA Roadwatch** – A part of the Automotive Association (AA Ireland), this is another application that provides information on road blockages, constructions all over Ireland. This application is developed for Ireland and the information is detailed and in real-time all over the country. It provides traffic updates as well. Again, it does not consider the traffic due to any event along the route of the commuter. It provides real-time updates of disruptions in the city, but does not provide event (music concerts or sports events in general) details and alternate routes based on the traffic around an event.
+
 
 # Technical Solution: The Plot 
 ### Technology Involved
 
 **Front-end:**
+
+    Our front-end client is written in Android. The functions developed in this client include Launch Screen, Authentication System, Map and Event Display, Communication with Flask server, and User instructions.
+  *  Launch screen
+
+    The launch screen provides an elegant transition during the waiting time. Besides, all the system permissions needed are checked and requested in this phase. The screen will then navigate to the login page if permissions are granted. A library called AwesomeSplash on Github was used in this app. It provides a customizable animated launch screen. The app logo and name are displayed in the screen. 
+
+    
+    
   * Android - -	Our front-end client is written in Android, which is a mobile application the user can use to interact with the system to get the desired information 
  
  * Maps SDK for Android - SDK used to manage access to Google Maps server and display the map layout in our client (application)
