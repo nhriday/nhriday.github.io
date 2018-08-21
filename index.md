@@ -10,7 +10,6 @@ We believe our primary user base to be of two categories,
 That being said, the application is not limited to the mentioned type of users, but can be used generally by anyone who wishes to be notified about any events along their route
 
 
-<video src="nhriday.github.io/Demo.mp4" width="400" height="400" controls preload></video>
 
 ### 	Why are they important?
 
@@ -217,19 +216,9 @@ This is the biggest challenge we faced. To elaborate on this topic, previously m
 We had to carefully fill up all the missing values. All of us divided the tasks among ourselves by taking up 10 pages initially and fill up as much as possible and we ended up with a complete database of events with complete event information up to November 2018. We had to refer other sources to fill up data, we referred google for the capacity of the venue, end-time was predicted by observing historical data, type of event, the popularity of the event, a deadline of the 11 pm set by Dublin City Council for a few events. Geo-locations of events were referred on Google Maps. Due to the inconsistency in the data when the API is called, it is not possible to update the data on a daily basis and provide the user with the most recent update of events.
 
 
-### Roadmap
+# Demo
 
-![Roadmap]( nhriday.github.io/roadmap.JPG )
-
-According to our plan, we have 4 more sprints scheduled, each sprint task has been shown below individually,
-
-![Roadmap1]( nhriday.github.io/RM1.JPG )
-
-![Roadmap2]( nhriday.github.io/RM2.JPG )
-
-![Roadmap3]( nhriday.github.io/RM3.JPG )
-
-![Roadmap4]( nhriday.github.io/RM4.JPG )
+<video src="nhriday.github.io/Demo.mp4" width="400" height="400" controls preload></video>
 
 # Resources
 
