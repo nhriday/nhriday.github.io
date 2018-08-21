@@ -320,14 +320,45 @@ As mentioned above, we used Google Maps to evaluate the two components. The proc
 -	Source and Destination
 -	Distance (kms)
 -	Recorded time (current system time)
--	Travel time (Outside Radius)
 -	Travel time (Inside Radius)
--	Time delay (relating to quickest time)
+-	Time delay 
 -	Screenshots of alternate routes (Outside the radius)
 
+**Evaluation Example**
 
-The primary objective of the application is to provide the user with a route to the destination, notify them about any events along the route, predict the traffic along the route and provide alternate route(s) if available. We cannot compare the application with Google Maps because we cannot get the time estimates for the first route or the alternate route.
+- **Example 1**
 
+  Source – Kenilworth Park
+	Destination – National Gallery of Ireland
+	Distance – 4.2 kms
+	Venue – Gaiety theatre, 17th July
+	Start time – 3.30
+	Capacity – 2000 (Small Event)
+  
+  - **Example 2**
+  
+  ![EvEx](nhriday.github.io/data.JPG)
+  
+  Source – Moeran road, Walkinstown
+  Destination – 131 E Wall Rd, Dublin
+  Distance – 8.9 kms
+  Venue – 3 Arena, 28th July
+  Start time – 18.30
+  Capacity – 13000 (Large Event)
+  
+  ![EvEx2](nhriday.github.io/data2.JPG)
+  
+  - **Example 3**
+  
+  Source – Temple Bar
+  Destination – Ringsend Park
+  
+  Our system displayed 3 routes for the above source and destination. There were two events on each of the routes and the third route was suggested outside the radius, which meant that the user could avoid the traffic due to both the events 
+  
+  ![EvEx3](nhriday.github.io/data3.png)
+  
+
+  
 **Evaluation Outcome**
 
 From the evaluation phase, the following outcome was observed
