@@ -92,21 +92,37 @@ Along with the radius, we also came up with something known as Pre-start time �
 
 **Front-end:**
 
-    Our front-end client is written in Android. The functions developed in this client include Launch Screen, Authentication System, Map and Event Display, Communication with Flask server, and User instructions.
+   Our front-end client is written in Android. The functions developed in this client include Launch Screen, Authentication System, Map and Event Display, Communication with Flask server, and User instructions.
+  
   *  Launch screen
 
-    The launch screen provides an elegant transition during the waiting time. Besides, all the system permissions needed are checked and requested in this phase. The screen will then navigate to the login page if permissions are granted. A library called AwesomeSplash on Github was used in this app. It provides a customizable animated launch screen. The app logo and name are displayed in the screen. 
+   The launch screen provides an elegant transition during the waiting time. Besides, all the system permissions needed are checked and requested in this phase. The screen will then navigate to the login page if permissions are granted. A library called AwesomeSplash on Github was used in this app. It provides a customizable animated launch screen. The app logo and name are displayed in the screen. 
+   
+   
+  * Authentication system
 
+    As building a custom authentication system is complex, Google Firebase is chosen as the authentication system. Firebase is a powerful platform for mobile application development. Its authentication system is not hard for deployment and fits well with the Android system. Our application supports login with Google account and just about any email address and password. With the email and password account entered, A verification email will be sent to the address. When user logins into their account, a request is sent to the Firebase platform for authentication. After a successful login, the basic user information including icon, user name, and account will be sent back to the client. Glide, a fast image loading framework for Android, is used to retrieve the user icon to avoid lags. All these user details are displayed on the top of the menu. There is a sign out button in the menu. The client will check for account status. If user has already signed out, the text on the button will change into sign in and navigate to the login page.
     
     
-  * Android - -	Our front-end client is written in Android, which is a mobile application the user can use to interact with the system to get the desired information 
- 
- * Maps SDK for Android - SDK used to manage access to Google Maps server and display the map layout in our client (application)
- 
- * Google Places API - API used to get automated suggestions from Google Maps when a user types in the name of a location. It also helps in obtaining the geo-locations of the searched location
- 
- * AwesomeSplash - -	used to create a custom splash screen, which we use as a loading screen for the application. This library was developed by Viktor Arsovski.
+  * Map and Event display
 
+    There are a map page and an event page in this client (app). The map page allows user to enter source and destination to check if there is any event happening along the route. The two search boxes have auto-complete function. As a location is typed in, the Google API Client will check with Google Places API which then returns five most appropriate places and displayed in the search box. Because Google Places API use the same database with Google Maps, there will be no confliction between these places. When one location is selected, the name will be displayed in the text box. Meanwhile, the geo-location is also retrieved from API and stored for communicating with the server. The current location of the device is obtained and used as the default source in the search box. A map is displayed beneath the search box. The map and some map tools use Google Maps API for Android [4]. Besides, the marker for locating events, radius, polyline for showing route path are also provided by the API. A custom information window adapter is implemented for displaying details of the events. The information window will pop out after clicking the marker. By clicking the polyline, the estimated travel time will be shown using snackbar on the bottom of the screen.
+
+    The event page is similar to the map page. A floating button is set on the bottom right corner of the page. After clicking this button, a date picker will come out to let the user select the day he or she wants to check. The events information is then returned from the server and displayed by the marker on the map. The radius of the event is also shown by adding a light blue circle around the event. 
+    
+    * Communication with Flask server
+
+    When the post action in map or event page happens, a new thread is created for communicating with the server. This can avoid the main UI thread from getting stuck. When the communication is finished, this thread will join to the main thread again. For the communication, two utility classes are created for the route and event connection. During the communication, a HTTP connection is built to the web API URL. Data such as date, geo-location that needs to be passed to the server are sent as tokens in the URL. Data returns from the Flask server in Json format. The Json library in Java is used to decode the data and use in the map and event page. Moreover, the polyline returned from server is encoded. A library called ‘Interactive Polyline Encoder Utility’ in the google maps API is used to decode the polyline into a list of LatLng type geo-points to draw path on the map.
+    
+    * User instructions
+
+    A brief instruction is implemented to help the user get a better understanding of the application. The instruction consists of three pages, an overview of the application, an introduction to the map page, and an introduction to the event page. A library called FancyWalkthrough on GitHub was used to build these pages.
+    
+    * UI design
+
+    The overall user interface design of this client follows the Android material design guidelines. The interface uses navigation drawer layout as the overall layout. The drawer menu designs to be similar with original Android application like Google Play Store. The color and icon used in the client is also chosen from material design examples. 
+    
+    
 **Back-end:** 
   * Flask Server
    – handle the requests from the client and call the Google Maps API for relevant information regarding routes and return the event details by accessing the database depending on the request, which is the date and time entered by the user or system time by default and the route information returned from the Google Maps API
