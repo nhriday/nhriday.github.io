@@ -60,7 +60,7 @@ When we first set out to develop this application, we had two reference points. 
 
   - **Predict traffic with radius** – The primary logic behind notifying the user about the event and the traffic around it, is the route of the user being in a specific vicinity or area around the venue. We decided to define an estimated area around the event by calculating the radius for a specific distance. This was done with help of a website ‘www.freemaptools.com’. The website allows us to enter the geographical co-ordinates of the venue and also the required radius and then draws an area around the location. We plan to use this to estimate the radius and notify the user about the event and the traffic around it.
 
-Along with the radius, we also came up with something known as Pre-start time – in case of larger events, which is our primary target to predict traffic, the traffic will be higher or start to increase maybe an hour or two before the start of the event; and Post-end time – similarly, the traffic is high after an hour or two after the event has ended. We used this time difference to predict the traffic based on the type of events.
+    Along with the radius, we also came up with something known as Pre-start time – in case of larger events, which is our primary target to predict traffic, the traffic will be higher or start to increase maybe an hour or two before the start of the event; and Post-end time – similarly, the traffic is high after an hour or two after the event has ended. We used this time difference to predict the traffic based on the type of events.
 
   - **Accessing Flask through our client** – The web API written in flask to process requests from the server, is to be accessed by public ports which were not made available by UCD. In order to access it using the public internet we need access to the ports on the server. We communicated with IT services in solving this problem.
  
@@ -90,11 +90,11 @@ Along with the radius, we also came up with something known as Pre-start time �
 # Technical Solution: The Plot 
 ### Technology Involved
 
-**##Front-end:##**
+## **Front-end:** ##
 
    Our front-end client is written in Android. The functions developed in this client include Launch Screen, Authentication System, Map and Event Display, Communication with Flask server, and User instructions.
   
-  1.  Launch screen
+  1. Launch screen
 
   The launch screen provides an elegant transition during the waiting time. Besides, all the system permissions needed are checked and requested in this phase. The screen will then navigate to the login page if permissions are granted. A library called AwesomeSplash on Github was used in this app. It provides a customizable animated launch screen. The app logo and name are displayed in the screen. 
    
