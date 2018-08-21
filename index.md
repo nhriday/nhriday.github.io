@@ -45,7 +45,7 @@ Traffic is a major issue in Dublin, here are a few news articles on the effect o
 
 The report says, “Traffic heading into and out of certain parts of Dublin city is an absolute nightmare and unfortunately, it's going to get a lot worse as traffic is set to increase by 50,000 journeys a day in the next nine years, according to the Department of Transport.”
 
-The primary problem of our target users we aim to solve is that of avoiding unnecessary traffic. Usually, most daily commuters may use an application that provides them the route to their destination and also frequent commuters who are well versed with the route may not use any application at all. The problem with both these approaches are neither of them are aware of any events along their route which might have led to a high traffic scenario which eventually may result in the user stuck in traffic and getting late to work, getting home or simply put, reaching their destination. Our application helps them avoid this by notifying them about any events along their way, details about the event such as capacity and an estimation of the number of vehicles, start time and probable end time of the event, and most importantly an alternate if available so that they can reach their destination.
+The primary problem of our target users we aim to solve is that of avoiding unnecessary traffic. Usually, most daily commuters may use an application that provides them the route to their destination and also frequent commuters who are well versed with the route may not use any application at all. The problem with both these approaches are neither of them are aware of any events along their route which might have led to a high traffic scenario which eventually may result in the user stuck in traffic and getting late to work, getting home or simply put, reaching their destination. Our application helps them avoid this by notifying them about any events along their way and most importantly an alternate route if available so that they can reach their destination.
 
 
 
@@ -56,18 +56,18 @@ The primary problem of our target users we aim to solve is that of avoiding unne
 When we first set out to develop this application, we had two reference points. Ticketmaster and Google Maps. Ticketmaster is a website that sells tickets for almost every event in Ireland, specifically Dublin as we are building a database that consists of events in Dublin. Google Maps is an application used by almost everyone to reach their destination and its use ranges right from taking a walk to planning a trip. We believe our system exists as an effective culmination of the best features of the two applications
 
 ### 	Challenges
-  - **Estimate end time** – The ticketmaster API does not give us the end time of the events, only the starting times. We estimated the end time of the events based on the type of event, capacity of the venue and historical data for the large venues.
+  - **Estimate end time** – The Ticketmaster API does not give us the end time of the events, only the starting times. We estimated the end time of the events based on the type of event and historical data for the large venues
 
-  - **Predict traffic with radius** – The primary logic behind notifying the user about the event and the traffic around it, is the route of the user being in a specific vicinity or area around the venue. We decided to define an estimated area around the event by calculating the radius for a specific distance. This was done with help of a website ‘www.freemaptools.com’. The website allows us to enter the geographical co-ordinates of the venue and also the required radius and then draws an area around the location. We plan to use this to estimate the radius and notify the user about the event and the traffic around it.
+  - **Predict traffic with radius** – The primary logic behind notifying the user about the event and the traffic around it, is the route of the user being in a specific vicinity or area around the venue. We decided to define an estimated area around the event by calculating the radius for a specific distance. This was done with help of a website ‘www.freemaptools.com’. The website allows us to enter the geographical coordinates of the venue and also the required radius and then draws an area around the location. We plan to use this to estimate the radius and notify the user about the event and the traffic around it.
 
-    Along with the radius, we also came up with something known as Pre-start time – in case of larger events, which is our primary target to predict traffic, the traffic will be higher or start to increase maybe an hour or two before the start of the event; and Post-end time – similarly, the traffic is high after an hour or two after the event has ended. We used this time difference to predict the traffic based on the type of events.
+Along with the radius, we also came up with something known as Pre-start time – in the case of larger events, which is our primary target to predict traffic, the traffic will be higher or start to increase maybe an hour or two before the start of the event; and Post-end time – similarly, the traffic is high after an hour or two after the event has ended. 
+
 
   - **Accessing Flask through our client** – The web API written in flask to process requests from the server, is to be accessed by public ports which were not made available by UCD. In order to access it using the public internet we need access to the ports on the server. We communicated with IT services in solving this problem.
  
-  - **Data Refresh** – The data from ticketmaster API is unstructured and inconsistent. We encountered a lot of missing values including names of venues and events, capacity of the venue, starting time and other information. We carefully filled in the missing values by referring other entries and historical data. 
+  - **Data Refresh** – The data from Ticketmaster API is unstructured and inconsistent. We encountered a lot of missing values including the capacity of the venue, end time and location of the venue. We carefully filled in the missing values by referring to other entries and historical data. 
 
-
-  - **Locating venue along the route** – Locating the venue along the route is one of the primary objectives of the application. We plan to do this by calculating the distance between the geographical points of the venue and the points on the route to make sure it is as accurate as possible. The geolocations are obtained using Google Places API and subsequently used to calculate the distance
+ - **Locating venue along the route** – Locating the venue along the route is one of the primary objectives of the application. We accomplished this by calculating the distance between the geographical points of the venue and the points on the route to make sure it is as accurate as possible. The geolocations are obtained using Google Places API and subsequently used to calculate the distance. If the distance we calculated is inside the radius defined, we can infer that the venue is along the route the user is commuting on.
 
   - **Displaying Routes** – The routes on the application are displayed by accessing the Google Maps API. Initially, the API gave us a number of geo-points on the route we wanted. We connected those points using a straight line and displayed the route on the map. The glaring error here was that the routes were not following the corresponding road on the map. They were just a few straight lines combined together and displayed.
 
@@ -78,13 +78,15 @@ When we first set out to develop this application, we had two reference points. 
 ### 	Can you review other existing systems or products that address this problem? 
   - **Google Maps** - Google Maps is a very effective navigation tool which notifies users about real time changes along the route. It also notifies the user of traffic ahead while commuting by displaying the intensity of traffic by different colors, red being the indication that traffic is high and also provides an alternate route(s). This does not give the user a clear idea of the traffic. We want to provide the user with an additional feature by notifying them about the traffic with information about why the traffic is high and an alternate route(s) if available. If the user is aware of a large-scale event ahead, say a music concert with about 10000 people. This helps the user get a clear idea of the situation and plan the commute accordingly. We plan to emulate the service provided by Google Maps in our own unique perspective
   
+ - **AA Roadwatch** – A part of the Automotive Association (AA Ireland), this is another application that provides information on road blockages, constructions all over Ireland. This application is developed for Ireland and the information is detailed and in real-time all over the country. It provides traffic updates as well. Again, it does not consider the traffic due to any event along the route of the commuter. It provides real-time updates of disruptions in the city, but does not provide event (music concerts or sports events in general) details and alternate routes based on the traffic around an event.
+ 
   - **Citymapper** – Citymapper is a crowd sourced city transit navigation app which offers a range of options to use while commuting in a city. It includes a journey planner as well. For a source and destination entered, the app also provides information on any disruptions in the route in real-time. Disruptions can be anything from road blockages to traffic congestion. The app provides routes and suggestions on how to use public transport to the destination. It does not provide directions for a commuter using a car or a motorbike.  The application does have a lot of features that would be a wonderful addition with our app, but it does not provide a solution to the specific problem we aim to solve. Moreover, this application does not operate in Ireland.
 
   - **INRIX Traffic** – A crowd sourced application, which provides a comprehensive view of the traffic around the commuter in real-time and any events or incidents along the way. It also provides navigation to the destination. The user can also choose to view the events on the route. Compared to the AA Roadwatch app, the disruptions such as road blockages shown in the city were very few. No events were displayed in the city after choosing the event display function in the app, whereas there were events all over the city according to our app. The app is designed for major US cities and not consistent with information in Dublin. It also does not consider the traffic due to a disruption with the alternate routes it suggests.
 
     The biggest drawback with crowd sourced applications is that the incident reported can be faked by anyone to divert traffic. Reports of people reporting fake incidents to reroute traffic around their homes has been recorded. Two students faked a traffic jam and tricked the application to reroute traffic affecting thousands of commuters.
 
-  - **AA Roadwatch** – A part of the Automotive Association (AA Ireland), this is another application that provides information on road blockages, constructions all over Ireland. This application is developed for Ireland and the information is detailed and in real-time all over the country. It provides traffic updates as well. Again, it does not consider the traffic due to any event along the route of the commuter. It provides real-time updates of disruptions in the city, but does not provide event (music concerts or sports events in general) details and alternate routes based on the traffic around an event.
+  
 
 
 # Technical Solution: The Plot 
@@ -114,35 +116,7 @@ When we first set out to develop this application, we had two reference points. 
     
 ### **Back-end:**
  
-    
-   **Flask Server (Web API)** - handle the requests from the client and call the Google Maps API for relevant information regarding routes and return the event details by accessing the database depending on the request, which is the date and time entered by the user or system time by default and the route information returned from the Google Maps API. We built the web API using flask, using 3 different URL’s to get 3 distinct results that are relevant to the user. Two URL’s to display the routes and the event info on the map page and one to retrieve the event details on a particular day on the event page.
-
-```**"https://maps.googleapis.com/maps/api/directions/json?origin= + source + "&destination=" + dest + "&alternatives=true&key=" + key**```
-
-   The source and destination are passed from the android application. The google maps API is accessed and returns the polylines that were used to draw the primary and alternate routes on the map
-
-```**/EventGPS-api/sql/result/<date>/<time>**```
-  
-   The date and time are passed from the android application. This url is used to access the database which returns the events on the given day and time. The distance between the venue and the route is calculated. If the distance is within the radius we defined, then the url returns the details of the event. (as the event is along the route).
-
-```**/EventGPS-api/events/all/<date>**```
-
-   The date (chosen by the user) is passed from the android application. This URL returns all the events on the particular day.
-   
-   **Web Server and Database** – The server was provided by UCD IT services. We installed MySQL database on the server. The reason for choosing MySQL was its compatibility with Flask server and we had just finished an Intro to MySQL module in the previous semester and were well versed with it. 
-
-  The flask server was hosted on a virtual environment created in the server and Python3 was used to run the code because the default Python2 did not support some of the packages used in the file.
-
-We created and populated the database with the following 4 tables namely: 
-
-- event (EventID, EventName, Date, PreStartTime, StartTime, EndTime, PostEndTime), 
-- eventvenue (EventID, VenueID), 
-- radius (VenueID, Radius), 
-- venue (VenueID, VenueName, City, Country, Address, Geolocation, Capacity). 
-
-We created a couple of views to simply complex queries.
-  
-  **Data – Ticketmaster API**
+   **Data Sources - Ticketmaster API**
 
   Initially, we started with three data sources Ticketmaster, Eventbrite and Ticketleap. We progressed with Ticketmaster as the other two had a few issues detailed below: - 
 
@@ -152,8 +126,10 @@ We created a couple of views to simply complex queries.
 
  - Ticketmaster - Ticketmaster was the best available option out of the sources we shortlisted as it is the largest ticket selling platform for events and the API provided most of the details regarding the event details
  
- **Data Collection**
+ Some of the other sources did not provide API for the data extraction. Web scraping was inappropriate for these sources as the web pages had inconsistent and incomplete data.
 
+ **Data Collection**
+ 
   TicketMaster API was chosen as the data source. Data was collected from the chosen API using Python. This process was implemented as a Python Notebook
 
   Each call to the API returned 20 events (page-wise). The API allowed maximum of 1000 event band-width; 50 calls (50 pages) to the API were allowed. The collected data was stored as a CSV file.
@@ -195,16 +171,44 @@ We created a couple of views to simply complex queries.
   
   Capacity > 50000 -> 800mts
   
-  Made use of [FreeMapTools](https://www.freemaptools.com/) to visualize the calculated radius around the venue. This was essential because in some cases we found out that the radius we defined were not able to cover the major roads. Due to the inconsistency in the data when the API is called, it is not possible to update the data on a daily basis and provide the user with the most recent update of events.
+  Made use of [FreeMapTools](https://www.freemaptools.com/) to visualize the calculated radius around the venue. This was essential because in some cases we found out that the radius we defined were not able to cover the major roads. Due to the inconsistency in the data when the API is called, it is not possible to update the data on a daily basis and provide the user with the most recent update of events.  
+  
+ 
+ **Web Server and Database** – The server was provided by UCD IT services. We installed MySQL database on the server. The reason for choosing MySQL was its compatibility with Flask server and we had just finished an Intro to MySQL module in the previous semester and were well versed with it. 
 
-**Integration (Hosting the web API on the web server):**
+  The flask server was hosted on a virtual environment created in the server and Python3 was used to run the code because the default Python2 did not support some of the packages used in the file.
+
+We created and populated the database with the following 4 tables namely: 
+
+- event (EventID, EventName, Date, PreStartTime, StartTime, EndTime, PostEndTime), 
+- eventvenue (EventID, VenueID), 
+- radius (VenueID, Radius), 
+- venue (VenueID, VenueName, City, Country, Address, Geolocation, Capacity). 
+
+We created a couple of views to simply complex queries.
+   
+ 
+ **Flask Server (Web API)** - handle the requests from the client and call the Google Maps API for relevant information regarding routes and return the event details by accessing the database depending on the request, which is the date and time entered by the user or system time by default and the route information returned from the Google Maps API. We built the web API using flask, using 3 different URL’s to get 3 distinct results that are relevant to the user. Two URL’s to display the routes and the event info on the map page and one to retrieve the event details on a particular day on the event page.
+
+```**"https://maps.googleapis.com/maps/api/directions/json?origin= + source + "&destination=" + dest + "&alternatives=true&key=" + key**```
+
+   The source and destination are passed from the android application. The google maps API is accessed and returns the polylines that were used to draw the primary and alternate routes on the map
+
+```**/EventGPS-api/sql/result/<date>/<time>**```
+  
+   The date and time are passed from the android application. This url is used to access the database which returns the events on the given day and time. The distance between the venue and the route is calculated. If the distance is within the radius we defined, then the url returns the details of the event. (as the event is along the route).
+
+```**/EventGPS-api/events/all/<date>**```
+
+   The date (chosen by the user) is passed from the android application. This URL returns all the events on the particular day.
+   
+ 
+ **Integration (Hosting the web API on the web server):**
 
    We were not able to access the web API over the public internet as a few of the ports needed were blocked. We contacted UCD IT Services to access the public ports. After access to the ports were granted, we used port 443 (HTTPS port) to make web API available over the internet.
 
 
 
- 
- 
 **The Process**
 
 There are two things the user can do in the beginning, the first is the user entering the source and destination of the commute planned; the second is the user checking for all the events on the particular day. 
@@ -219,7 +223,7 @@ There is a process followed to get the routes, the server interacts with the Fla
 
 -	The flask web API interacts with two entities and returns back two web pages.
 
--	The first webpage is the routes specific to the user, by interacting with the Google direction API to obtain the geo-locations of the locations requested from the client. Using these geo-locations, a route to the preferred destination is displayed on the screen.
+-	The first webpage is the routes specific to the user, by interacting with the Google direction API to obtain the polylines. Using these polylines and the routes to the preferred destination is displayed on the screen. Primary and alternate routes are displayed together on the screen.
 
 -	The second webpage is the information about every event on the day, which is stored in the MySQL database. The web API interacts with the database to extract relevant data and sends it back to the client through the server.
 
@@ -335,11 +339,11 @@ From the evaluation phase, the following outcome was observed
 
 # Conclusion
 
-**Project Management** 
+**Project Management**  
 
 We followed an Agile project management strategy where we went through six sprints of two weeks for each sprint. We named a Scrum master and he divided specific tasks between the teams. Weekly progress was tracked by the scrum master and the problems were discussed with everyone contributing to solve issues if any. We met every weekend to discuss the weekly progress and more importantly the plan for the week ahead corresponding to the sprints defined. The report and the presentation work were done with everyone during the weekly meetings.
 
- Initially all of us worked together on the data collection phase and the data cleaning phase as there were a lot of manual data to be filled in the database. It needed the contribution of all the team members to enter the estimated end-time, Pre-start and Post-end times, access Google Maps API to retrieve missing location co-ordinates of venues, visualize the radius according to the defined area using [FreeMapTools](https://www.freemaptools.com/) and other missing values such as event names, venue names. After the database was setup, the team was divided into two, a front-end and a back-end team. The front-end team was responsible for developing the client application (Android app) and establishing connection with the flask server to retrieve the route (Primary and Alternate) information from google maps. The back-end team was responsible for creating the flask web API, configuring the web server and the database as well and integrating the web API and the server to retrieve event information. After the database was configured, the data collected initially was pushed to the database. The following illustration represents the process flow and the sprints we defined.
+ Initially all of us worked together on the data collection phase and the data cleaning phase as there were a lot of manual data to be filled in the database. It needed the contribution of all the team members to enter the estimated end-time, Pre-start and Post-end times, access Google Maps API to retrieve missing location co-ordinates of venues, visualize the radius according to the defined area using [FreeMapTools](https://www.freemaptools.com/). After the database was setup, the team was divided into two, a front-end and a back-end team. The front-end team was responsible for developing the client application (Android app) and establishing connection with the flask server to retrieve the route (Primary and Alternate) information from google maps. The back-end team was responsible for creating the flask web API, configuring the web server and the database as well and integrating the web API and the server to retrieve event information. After the database was configured, the data collected initially was pushed to the database. The following illustration represents the process flow and the sprints we defined.
 
 ![Sprint]( nhriday.github.io/sprints.JPG )
 
