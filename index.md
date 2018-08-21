@@ -295,7 +295,7 @@ We started the evaluation phase with two components of the system in mind
 
 The radius defined around each venue is based on the capacity of the venue, larger the capacity, larger the radius. Larger the radius, larger the traffic around that particular venue during the event. We chose the radius as an important part of evaluating the system as a whole because notifying the user of the event along the preferred path entirely depends on the route being inside the radius defined for an event. The evaluating factor here is to check whether the radius defined is logical. Logical, in the sense that the high degree of traffic around the event is approximately, if not accurately is in fact inside the radius we have defined.
 
--	Efficiency of the alternate routes suggested
+-	**Efficiency of the alternate routes suggested**
  	
 The second integral part of our application is suggesting alternate routes to the user to avoid getting stuck in traffic. We chose to evaluate this as to make sure the alternate routes suggested are in fact useful to the commuters. The evaluating factor here is to check whether the alternate routes suggested are outside the defined radius as the routes being inside the radius of a venue defeats the purpose of this evaluation and the whole system as well. For a source and destination entered by the user, one primary and at least two alternate routes are given. The purpose of the alternate routes is to divert from the primary route thereby avoiding traffic on the primary route.
 
@@ -303,7 +303,7 @@ The second integral part of our application is suggesting alternate routes to th
 
 As mentioned above, we used Google Maps to evaluate the two components. The process involved just the 5 group members, each covering a single event at a time. Every evaluation was done in real-time. The first week of the evaluation phase, we covered several small events (capacity less than 10000) we had on our database. The next week we had a couple of large events (Capacity more than 30000) on our calendar at the same venue which gave us concrete results on the time delays and alternate routes.
 
-Setup and Data
+- **Setup and Data**
 
  The evaluation was conducted at our residences, which also served as the source for many of the events evaluated. The equipment used were one Laptop for each group member with a working internet connection. The browser used was Google Chrome. The website URL used was https://www.google.com/maps. The results were recorded in an Excel spreadsheet. We started the evaluation at the Pre-start time that was set for every event and ended the evaluation at the Post-end time. For each event, we used routes from 5 different directions. Each route had a primary route that passed through the venue and one or more alternate routes that were outside the radius or sometimes inside depending on the available routes. Each one of us opened 5 different tabs on the browser with routes from 5 different directions and started recording results corresponding to the Pre-start time defined for the event. Once the routes were set, we refreshed the Google Maps page every 10 mins and recorded the results. The results recorded in the Excel spreadsheet were as follows: - 
 -	Venue
@@ -325,45 +325,40 @@ From the evaluation phase, the following outcome was observed
 
 - **Suitable for large events** – From the data collected, we observed that the system was successful when used during larger events. The delay times during the small events was negligible. The traffic did not seem to be affected by the event, it was the usual rush hour traffic or the real-time traffic during that time. Whereas, the time delays observed during the larger events were significant inside the radius which means the traffic inside the radius during the event was high enough for delays to be recorded. Therefore, we can conclude that the system works as intended for larger events
 
-- Pre and post times accurate for larger events – We observed that the pre and post times defined for larger events were accurate for the ones we evaluated compared to the smaller events. The delay times we recorded from the pre-start time to the post-end time were due to the traffic caused by the event. Again, the pre and post times did not seem to affect the time delays and the traffic was also not affected due to the event and was usual traffic at that particular time.
+- **Pre and post times accurate for larger events** – We observed that the pre and post times defined for larger events were accurate for the ones we evaluated compared to the smaller events. The delay times we recorded from the pre-start time to the post-end time were due to the traffic caused by the event. Again, the pre and post times did not seem to affect the time delays and the traffic was also not affected due to the event and was usual traffic at that particular time.
 
-- Delay times inside radius (minimum of 15 minutes) – From the data we collected for the larger events, we observed that delay times due to traffic inside the defined radius around the venue was a minimum of 15 mins. The delay time went up to 25 mins at one point. The delay times outside the radius, that is the alternate routes were not recorded as it does not matter with regards to avoiding traffic around an event. The alternate route is a completely different route outside the radius not affected by the traffic due to the event most of the time.
+- **Delay times inside radius (minimum of 15 minutes)** – From the data we collected for the larger events, we observed that delay times due to traffic inside the defined radius around the venue was a minimum of 15 mins. The delay time went up to 25 mins at one point. The delay times outside the radius, that is the alternate routes were not recorded as it does not matter with regards to avoiding traffic around an event. The alternate route is a completely different route outside the radius not affected by the traffic due to the event most of the time.
 
-- Alternate routes were outside the radius (Approx 70%) – From the data we collected, the alternate routes suggested by the application were outside the radius with a success rate of 70%. The alternate routes were almost faultless for smaller events with the routes outside the radius. For larger events, the alternate routes did cross over with the primary route inside the radius a few times, but the routes were outside the radius for most of the events and hence the mentioned success rate.
+- **Alternate routes were outside the radius (Approx 70%)** – From the data we collected, the alternate routes suggested by the application were outside the radius with a success rate of 70%. The alternate routes were almost faultless for smaller events with the routes outside the radius. For larger events, the alternate routes did cross over with the primary route inside the radius a few times, but the routes were outside the radius for most of the events and hence the mentioned success rate.
 
 
 
 # Conclusion
 
-**Project management strategy**
+**Project Management** 
 
-We are following the Agile project management strategy. We are following a system where we have two-week sprints. Each of us have a specific task assigned and the scrum master (Mehul Singh) is the buffer for any type of information exchange. The following illustration represents the process flow
+We followed an Agile project management strategy where we went through six sprints of two weeks for each sprint. We named a Scrum master and he divided specific tasks between the teams. Weekly progress was tracked by the scrum master and the problems were discussed with everyone contributing to solve issues if any. We met every weekend to discuss the weekly progress and more importantly the plan for the week ahead corresponding to the sprints defined. The report and the presentation work were done with everyone during the weekly meetings.
+
+ Initially all of us worked together on the data collection phase and the data cleaning phase as there were a lot of manual data to be filled in the database. It needed the contribution of all the team members to enter the estimated end-time, Pre-start and Post-end times, access Google Maps API to retrieve missing location co-ordinates of venues, visualize the radius according to the defined area using [FreeMapTools](https://www.freemaptools.com/) and other missing values such as event names, venue names. After the database was setup, the team was divided into two, a front-end and a back-end team. The front-end team was responsible for developing the client application (Android app) and establishing connection with the flask server to retrieve the route (Primary and Alternate) information from google maps. The back-end team was responsible for creating the flask web API, configuring the web server and the database as well and integrating the web API and the server to retrieve event information. After the database was configured, the data collected initially was pushed to the database. The following illustration represents the process flow and the sprints we defined.
 
 ![Sprint]( nhriday.github.io/sprints.JPG )
 
 In addition to the above sprints, we discuss the progress and issues at least every two days over text messaging or Skype. At the end of each week, all of us make sure we meet face to face at UCD mostly to discuss the progress and get ready for the next sprint. Initially we divided ourselves into two teams of 2 and 3 to work on front-end and back-end development respectively. After the second sprint, the whole team took on the responsibility of writing the report and readying the presentation. All 5 of us met at the end of the second sprint and gave inputs on what each of them worked on and came up with the report and the presentation.
 
-### Biggest challenges
+**Lessons learned**
 
-**1.	Accurate Routes:** 
+-	Project Management – Initially we did not follow any kind of project management methodology, we did not meet regularly and communicated over the phone. We soon realized it did not work at all as we missed the deadlines we had set for the second week regarding the data collection and cleaning phase. We came up with a concrete plan moving ahead, an agile methodology with six sprints. We started communicating more regularly and meeting face to face to make sure we met all the deadlines we set. The front-end and the back-end teams met at least 3 times in a week excluding the team meeting in the weekend and worked on the project. Even though we did not follow a formal method to track the progress of the project and the contributions, strict deadlines were set by the scrum master and we learned the importance of meeting deadlines, achieving shorter goals and in turn completing the intended work on time, the benefits of face to face meetings.
 
-The challenge we believe is obtaining the accurate routes in order for the commuter to be able to use it effectively. Google Maps Direction API for Android does not provide routes and navigation information. We cannot get the routes by calling the Google Maps on the phone, only the Maps JavaScript API provides the routes.
+-	Technical Knowledge – When we started out, we were well versed with python and the reason why we chose python as our main programming language. During the course of this project, we came across a host of technologies which improved our technical skills such as Flask, MySQL, Android, and Google Maps.
 
-We plan to overcome it by sending the geolocation data from the Google Places API to the server to make API calls instead of making HttpConnections to call the API by the client. This helps us to send back the exact route data back to the client by drawing polylines on the map. Obtaining the geo-locations also helps us to provide alternate routes.
 
-**2.	Data Refresh:**
+**Future Implementation**
 
-This is the biggest challenge we faced. To elaborate on this topic, previously mentioned in the Technical Problem -- Challenges, the event data is an integral part of the whole application. These are the following observations we did while we received data from the Ticketmaster API, 
--	The data is very inconsistent 
--	Geo-locations of venues were missing
--	Information about some events are available on a partner site; the user is redirected to buy the tickets and event information is available on the partner site.  
--	Basic information including event name, time, date was missing. This is mostly for the smaller events
--	API does not give us the capacity and end-time of the event
--	Event details of only 1000 events can be obtained
--	Each page contains only 20 events
--	Almost every page has one or the other information missing
+-	Notify user of time delays – We believe this would be a useful implementation as notifying the user of the time delays on the primary route to the destination can help in planning the trip better. We could not implement it as we did not have enough data to accurately gauge the traffic intensity around the venue, which would have helped in estimating a delay time on the route.
+-	Save user preferences – The option for the user to save a preferred source and destination instead of typing it in every time they use the app would be a very useful improvement and would improve the efficiency of the system as a whole as well. We implemented the login functionality with the sole purpose of implementing the above-mentioned function. We could not implement it because we are using a third-party authentication system and the server cannot be accessed with it thereby restricting access to our database. The solution would be developing a custom authentication system which can be tweaked to interact with our server better. Given the time, a custom system can be implemented in the future.
 
-We had to carefully fill up all the missing values. All of us divided the tasks among ourselves by taking up 10 pages initially and fill up as much as possible and we ended up with a complete database of events with complete event information up to November 2018. We had to refer other sources to fill up data, we referred google for the capacity of the venue, end-time was predicted by observing historical data, type of event, the popularity of the event, a deadline of the 11 pm set by Dublin City Council for a few events. Geo-locations of events were referred on Google Maps. Due to the inconsistency in the data when the API is called, it is not possible to update the data on a daily basis and provide the user with the most recent update of events.
+
+
 
 
 # Demo
@@ -372,22 +367,29 @@ We had to carefully fill up all the missing values. All of us divided the tasks 
 
 # Resources
 
--	Github
--	https://github.com/ViksaaSkool/AwesomeSplash
--	https://pages.github.com
--	http://flask.pocoo.org/docs/1.0
--	https://www.tutorialspoint.com/flask
--	https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
--	https://developer.ticketmaster.com/
--	https://developers.google.com/maps/documentation/
--	Android Studio
--	Jupyter Notebook
--	Youtube
--	Google
--	Stack Overflow
--	News articles - 
-
-https://www.rte.ie/news/business/2018/0316/948010-dublin-chamber-traffic/
+•	Github
+•	Microsoft Word
+•	Microsoft Powerpoint
+•	https://github.com/ViksaaSkool/AwesomeSplash
+•	https://pages.github.com
+•	http://flask.pocoo.org/docs/1.0
+•	https://www.tutorialspoint.com/flask
+•	https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+•	https://developer.ticketmaster.com/
+•	https://developers.google.com/maps/documentation/
+•	AwesomeSplash https://github.com/ViksaaSkool/AwesomeSplash
+•	Firebase https://firebase.google.com/
+•	Places API https://developers.google.com/places/web-service/intro
+•	Maps SDK for Android https://developers.google.com/maps/documentation/android-sdk/intro
+•	Interactive Polyline Encoder Utility  https://developers.google.com/maps/documentation/utilities/polylineutility
+•	FancyWalkthrough - Android https://github.com/Shashank02051997/FancyWalkthrough-Android 
+•	Android Material Design Guidelines https://material.io/design/introduction/#principles 
+•	Android Studio
+•	Jupyter Notebook
+•	Youtube
+•	Google
+•	Stack Overflow
+•	News articles - https://www.rte.ie/news/business/2018/0316/948010-dublin-chamber-traffic/
 
 https://www.irishtimes.com/news/ireland/irish-news/time-lost-in-dublin-traffic-costs-economy-350m-per-year-1.3066581
 
