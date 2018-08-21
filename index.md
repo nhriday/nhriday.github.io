@@ -279,33 +279,58 @@ Enter Source and Destination, the route is and the event along the route is disp
 
  - **Help Page** - •	Help Page – Click on the ‘Help’ option from the sidebar. This page contains information that can help the user better understand how to use the application.
  
- ![A5](nhriday.github.io/login1.PNG)
+ ![A5](nhriday.github.io/help1.PNG)
  
- ![A5](nhriday.github.io/login2.PNG)
+ ![A5](nhriday.github.io/help2.PNG)
 
 # Evaluation
 
-**What does success look like for your system?**
+  The most efficient and proper way of evaluating an application such as ours, is to physically commute the routes suggested by the app and evaluate whether they are efficient as advertised. This would require a considerable amount of time and resources which we could not afford. If we could not physically evaluate the system, the next best thing would be to do it virtually. We felt we could use Google Maps app to evaluate the system. Using the Google Maps, we recorded the time delays, primary routes, alternate routes, travel distance. The same is elaborated below. 
 
-A user enters a preferred source and destination using our application, in 
-return the following is available on the display -:
--	A route to the destination
--	Event markers along the route
--	Notifications to the user about the traffic conditions
--	Event info including title, time details, capacity of the venue
--	Traffic conditions close to the start/end time of the event
--	Alternate route(s) if available
-This would be a successful system
+**System components evaluated**
 
-**How will you evaluate the system that you built?**
+We started the evaluation phase with two components of the system in mind
+
+-	**Efficiency of the radius defined** 
+
+The radius defined around each venue is based on the capacity of the venue, larger the capacity, larger the radius. Larger the radius, larger the traffic around that particular venue during the event. We chose the radius as an important part of evaluating the system as a whole because notifying the user of the event along the preferred path entirely depends on the route being inside the radius defined for an event. The evaluating factor here is to check whether the radius defined is logical. Logical, in the sense that the high degree of traffic around the event is approximately, if not accurately is in fact inside the radius we have defined.
+
+-	Efficiency of the alternate routes suggested
+ 	
+The second integral part of our application is suggesting alternate routes to the user to avoid getting stuck in traffic. We chose to evaluate this as to make sure the alternate routes suggested are in fact useful to the commuters. The evaluating factor here is to check whether the alternate routes suggested are outside the defined radius as the routes being inside the radius of a venue defeats the purpose of this evaluation and the whole system as well. For a source and destination entered by the user, one primary and at least two alternate routes are given. The purpose of the alternate routes is to divert from the primary route thereby avoiding traffic on the primary route.
+
+**How was the system evaluated?**
+
+As mentioned above, we used Google Maps to evaluate the two components. The process involved just the 5 group members, each covering a single event at a time. Every evaluation was done in real-time. The first week of the evaluation phase, we covered several small events (capacity less than 10000) we had on our database. The next week we had a couple of large events (Capacity more than 30000) on our calendar at the same venue which gave us concrete results on the time delays and alternate routes.
+
+Setup and Data
+
+ The evaluation was conducted at our residences, which also served as the source for many of the events evaluated. The equipment used were one Laptop for each group member with a working internet connection. The browser used was Google Chrome. The website URL used was https://www.google.com/maps. The results were recorded in an Excel spreadsheet. We started the evaluation at the Pre-start time that was set for every event and ended the evaluation at the Post-end time. For each event, we used routes from 5 different directions. Each route had a primary route that passed through the venue and one or more alternate routes that were outside the radius or sometimes inside depending on the available routes. Each one of us opened 5 different tabs on the browser with routes from 5 different directions and started recording results corresponding to the Pre-start time defined for the event. Once the routes were set, we refreshed the Google Maps page every 10 mins and recorded the results. The results recorded in the Excel spreadsheet were as follows: - 
+-	Venue
+-	Event time
+-	Source and Destination
+-	Distance (kms)
+-	Recorded time (current system time)
+-	Travel time (Outside Radius)
+-	Travel time (Inside Radius)
+-	Time delay (relating to quickest time)
+-	Screenshots of alternate routes (Outside the radius)
+
 
 The primary objective of the application is to provide the user with a route to the destination, notify them about any events along the route, predict the traffic along the route and provide alternate route(s) if available. We cannot compare the application with Google Maps because we cannot get the time estimates for the first route or the alternate route.
 
-**What exactly are we measuring?**
+**Evaluation Outcome**
 
-Travelling through a defined route or a random source and destination might not seem realistic, but we believe it’s the most plausible approach to test our application to observe the accuracy of it’s predictions
+From the evaluation phase, the following outcome was observed
 
-We plan on measuring our system during some live events. The events we evaluate at will be all types of events including a sport event, a large-scale concert being the primary targets in order to test the traffic prediction and alternate routes. We aim to measure all the points mentioned in the success criteria for our system every time the application is tested so that the core functionality of the application works efficiently. Initially evaluation runs will be carried out by each member of the team, starting off with 2 events and increasing the events based on the results of the first run and also solving any issues that might arise in the process.
+- **Suitable for large events** – From the data collected, we observed that the system was successful when used during larger events. The delay times during the small events was negligible. The traffic did not seem to be affected by the event, it was the usual rush hour traffic or the real-time traffic during that time. Whereas, the time delays observed during the larger events were significant inside the radius which means the traffic inside the radius during the event was high enough for delays to be recorded. Therefore, we can conclude that the system works as intended for larger events
+
+- Pre and post times accurate for larger events – We observed that the pre and post times defined for larger events were accurate for the ones we evaluated compared to the smaller events. The delay times we recorded from the pre-start time to the post-end time were due to the traffic caused by the event. Again, the pre and post times did not seem to affect the time delays and the traffic was also not affected due to the event and was usual traffic at that particular time.
+
+- Delay times inside radius (minimum of 15 minutes) – From the data we collected for the larger events, we observed that delay times due to traffic inside the defined radius around the venue was a minimum of 15 mins. The delay time went up to 25 mins at one point. The delay times outside the radius, that is the alternate routes were not recorded as it does not matter with regards to avoiding traffic around an event. The alternate route is a completely different route outside the radius not affected by the traffic due to the event most of the time.
+
+- Alternate routes were outside the radius (Approx 70%) – From the data we collected, the alternate routes suggested by the application were outside the radius with a success rate of 70%. The alternate routes were almost faultless for smaller events with the routes outside the radius. For larger events, the alternate routes did cross over with the primary route inside the radius a few times, but the routes were outside the radius for most of the events and hence the mentioned success rate.
+
 
 
 # Conclusion
