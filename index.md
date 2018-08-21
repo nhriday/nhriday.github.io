@@ -338,7 +338,7 @@ As mentioned above, we used Google Maps to evaluate the two components. The proc
 	
 	• Start time – 3.30
 	
-	•Capacity – 2000 (Small Event)
+	• Capacity – 2000 (Small Event)
 
   
   ![EvEx](nhriday.github.io/data.JPG)
@@ -356,7 +356,7 @@ As mentioned above, we used Google Maps to evaluate the two components. The proc
 	
 	• Start time – 18.30
 	
-	•Capacity – 13000 (Large Event)
+	• Capacity – 13000 (Large Event)
 
   
   ![EvEx2](nhriday.github.io/data2.JPG)
