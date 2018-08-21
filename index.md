@@ -93,6 +93,11 @@ Along with the radius, we also came up with something known as Pre-start time �
 
 ## **Technology Involved**
 
+**What does the system do?**
+
+![System](nhriday.github.io/system.png)
+
+
 ### **Front-end:**
 
    Our front-end client is written in Android. The functions developed in this client include Launch Screen, Authentication System, Map and Event Display, Communication with Flask server, and User instructions.
@@ -247,7 +252,7 @@ The MySQL database stores data obtained by the Ticketmaster API to get the infor
 
   -	**Login** – Can login using an existing account or add a new account
   
-![A1](nhriday.github.io/login1.png)
+![Login](nhriday.github.io/login1.png)
 
   -	**Map Function** – this is the first page displayed when the app is opened, and can also be chosen from the sidebar
  
@@ -283,9 +288,9 @@ Enter Source and Destination, the route is and the event along the route is disp
 
  - **Help Page** - •	Help Page – Click on the ‘Help’ option from the sidebar. This page contains information that can help the user better understand how to use the application.
  
- ![A5](nhriday.github.io/help1.PNG)
+ ![Help](nhriday.github.io/help1.PNG)
  
- ![A5](nhriday.github.io/help2.PNG)
+ ![Help2](nhriday.github.io/help2.PNG)
 
 # Evaluation
 
