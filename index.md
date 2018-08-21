@@ -158,21 +158,21 @@ We created a couple of views to simply complex queries.
 
   Each call to the API returned 20 events (page-wise). The API allowed maximum of 1000 event band-width; 50 calls (50 pages) to the API were allowed. The collected data was stored as a CSV file.
   
-•	There were some missing fields in each page like the geo-location of a particular venue, they had to be entered manually using google maps. The data was inconsistent 
+  •	There were some missing fields in each page like the geo-location of a particular venue, they had to be entered manually using google maps. The data was inconsistent 
 
-•	Geo-locations of venues were missing
+  •	Geo-locations of venues were missing
 
-•	Information about some events are available on a partner site; the user is redirected to buy the tickets and event information is available on the partner site.  
+  •	Information about some events are available on a partner site; the user is redirected to buy the tickets and event information is available on the partner site.  
 
-•	Basic information including event name, time, date was missing. This is mostly for the smaller events
+  •	Basic information including event name, time, date was missing. This is mostly for the smaller events
 
-•	API does not give us the capacity and end-time of the event
+  •	API does not give us the capacity and end-time of the event
 
-•	Event details of only 1000 events can be obtained
+  •	Event details of only 1000 events can be obtained
 
-•	Each page contains only 20 events
+  •	Each page contains only 20 events
 
-•	Almost every page has one or the other information missing
+  •	Almost every page has one or the other information missing
 
   To make the application more efficient, we added the following fields to the data: -
   - **End-time** (depending on the category of the event. Ex: Music concerts would end around 10 in the night)
@@ -241,9 +241,15 @@ The MySQL database stores data obtained by the Ticketmaster API to get the infor
 
 ![A1](nhriday.github.io/App1.JPG)
 
+  -	**Login** – Can login using an existing account or add a new account
+  
+![A1](nhriday.github.io/login1.png)
+
   -	**Map Function** – this is the first page displayed when the app is opened, and can also be chosen from the sidebar
  
 ![A2](nhriday.github.io/App2.JPG)
+
+  
  
 Enter Source and Destination, the route is and the event along the route is displayed. The event is shown as a marker( ), the marker can be clicked upon to view the event details. The user will be notified whether there is an event along the route or not on the bottom of the page
 
@@ -267,9 +273,15 @@ Enter Source and Destination, the route is and the event along the route is disp
 
 ![A4](nhriday.github.io/App4.JPG)	
 
-  - **Current day events** – Choose the ‘Event’ option from the sidebar and click on the event calendar button on the bottom right-hand side of the screen. The events of the day in real time are shown with markers and can be clicked upon to view the event details.
+  - **Event Function** – Choose the ‘Event’ option from the sidebar and click on the event calendar button on the bottom right-hand side of the screen. The events of the day in real time are shown with markers and can be clicked upon to view the event details.
   
 ![A5](nhriday.github.io/App5.JPG)
+
+ - **Help Page** - •	Help Page – Click on the ‘Help’ option from the sidebar. This page contains information that can help the user better understand how to use the application.
+ 
+ ![A5](nhriday.github.io/login1.PNG)
+ 
+ ![A5](nhriday.github.io/login2.PNG)
 
 # Evaluation
 
