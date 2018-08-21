@@ -140,17 +140,17 @@ We created and populated the database with the following 4 tables namely:
 - radius (VenueID, Radius), 
 - venue (VenueID, VenueName, City, Country, Address, Geolocation, Capacity). 
 
-  We created a couple of views to simply complex queries.
+We created a couple of views to simply complex queries.
   
   **Data – Ticketmaster API**
 
   Initially, we started with three data sources Ticketmaster, Eventbrite and Ticketleap. We progressed with Ticketmaster as the other two had a few issues detailed below: - 
 
-  - *Eventbrite* - The Eventbrite API returned several fields like location.address, location.latitude, location.longitude which could be used to access the details of the events depending on the location but these fields did not return the appropriate data. 
+  -*Eventbrite* - The Eventbrite API returned several fields like location.address, location.latitude, location.longitude which could be used to access the details of the events depending on the location but these fields did not return the appropriate data. 
 
- - *Ticketleap* - Ticketleap API was providing the historical data of the events. Some of the other sources did not provide API for the data extraction. Web scraping was inappropriate for these sources as the web pages had inconsistent and incomplete data.
+ -*Ticketleap* - Ticketleap API was providing the historical data of the events. Some of the other sources did not provide API for the data extraction. Web scraping was inappropriate for these sources as the web pages had inconsistent and incomplete data.
 
- - *Ticketmaster* - Ticketmaster was the best available option out of the sources we shortlisted as it is the largest ticket selling platform for events and the API provided most of the details regarding the event details
+ -*Ticketmaster* - Ticketmaster was the best available option out of the sources we shortlisted as it is the largest ticket selling platform for events and the API provided most of the details regarding the event details
  
  **Data Collection**
 
@@ -175,17 +175,19 @@ We created and populated the database with the following 4 tables namely:
 •	Almost every page has one or the other information missing
 
   To make the application more efficient, we added the following fields to the data: -
-  - *End-time* (depending on the category of the event. Ex: Music concerts would end around 10 in the night) 
-  - *Pre-start time and Post-end time* (pre and post times were calculated based on the capacity, geolocation of the venue, start time and end time)
-  - *Capacity, Radius* (calculated using the following algorithm: Capacity <= 1000 -> 100mts, 
-  Capacity > 1000 and Capacity <= 2000 -> 200mts, 
-  Capacity > 2000 and Capacity <= 5000 -> 300mts, 
-  Capacity > 5000 and Capacity < 20000 -> 500mts, 
-  Capacity > 20000 and Capacity <= 40000 -> 600mts, 
-  Capacity > 40000 and Capacity <= 50000 -> 700mts, 
+  - **End-time** (depending on the category of the event. Ex: Music concerts would end around 10 in the night) 
+  - **Pre-start time and Post-end time** (pre and post times were calculated based on the capacity, geolocation of the venue, start time and end time)
+  - **Capacity, Radius** (calculated using the following algorithm: 
+  
+  Capacity <= 1000 -> 100mts, 
+  Capacity > 1000 and Capacity <= 2000 -> 200mts
+  Capacity > 2000 and Capacity <= 5000 -> 300mts
+  Capacity > 5000 and Capacity < 20000 -> 500mts
+  Capacity > 20000 and Capacity <= 40000 -> 600mts 
+  Capacity > 40000 and Capacity <= 50000 -> 700mts
   Capacity > 50000 -> 800mts
   
-  Made use of [FreeMapTools] (https://www.freemaptools.com/) to visualize the calculated radius around the venue. This was essential because in some cases we found out that the radius we defined were not able to cover the major roads. Due to the inconsistency in the data when the API is called, it is not possible to update the data on a daily basis and provide the user with the most recent update of events.
+  Made use of [FreeMapTools](https://www.freemaptools.com/) to visualize the calculated radius around the venue. This was essential because in some cases we found out that the radius we defined were not able to cover the major roads. Due to the inconsistency in the data when the API is called, it is not possible to update the data on a daily basis and provide the user with the most recent update of events.
 
 **Integration (Hosting the web API on the web server):**
 
