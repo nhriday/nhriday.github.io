@@ -89,9 +89,9 @@ When we first set out to develop this application, we had two reference points. 
 
 # Technical Solution: The Plot 
 
-### **Technology Involved**
+## **Technology Involved**
 
-## **Front-end:**
+### **Front-end:**
 
    Our front-end client is written in Android. The functions developed in this client include Launch Screen, Authentication System, Map and Event Display, Communication with Flask server, and User instructions.
   
@@ -124,10 +124,10 @@ When we first set out to develop this application, we had two reference points. 
    The overall user interface design of this client follows the Android material design guidelines. The interface uses navigation drawer layout as the overall layout. The drawer menu designs to be similar with original Android application like Google Play Store. The color and icon used in the client is also chosen from material design examples. 
     
     
-## **Front-end:**
+### **Back-end:**
  
     
-   1. Flask Server (Web API) - handle the requests from the client and call the Google Maps API for relevant information regarding routes and return the event details by accessing the database depending on the request, which is the date and time entered by the user or system time by default and the route information returned from the Google Maps API. We built the web API using flask, using 3 different URL’s to get 3 distinct results that are relevant to the user. Two URL’s to display the routes and the event info on the map page and one to retrieve the event details on a particular day on the event page.
+   **Flask Server (Web API)** - handle the requests from the client and call the Google Maps API for relevant information regarding routes and return the event details by accessing the database depending on the request, which is the date and time entered by the user or system time by default and the route information returned from the Google Maps API. We built the web API using flask, using 3 different URL’s to get 3 distinct results that are relevant to the user. Two URL’s to display the routes and the event info on the map page and one to retrieve the event details on a particular day on the event page.
 
 ```**"https://maps.googleapis.com/maps/api/directions/json?origin= + source + "&destination=" + dest + "&alternatives=true&key=" + key**```
 
@@ -166,7 +166,9 @@ There is a process followed to get the routes, the server interacts with the Fla
 The MySQL database stores data obtained by the Ticketmaster API to get the information about events including
 
 •	Event title & Venue
+
 •	Start time, End time (estimated)
+
 •	The Capacity of the venue
 
 ![P4](nhriday.github.io/Process4.JPG)
