@@ -264,19 +264,19 @@ Enter Source and Destination, the route is and the event along the route is disp
 
 **Example 1** 
 
-1. *Source* – current location 
+1. *Source* – UCD 
 
-2. *Destination* – 3 Arena
+2. *Destination* – Dublin Spire
 
-3. *Result* – 1 Event(s) found along the route, 3 Arena
+3. *Result* – 1 Event(s) found along the route, Aviva Stadium
 
 ![A3](nhriday.github.io/App3.JPG)
 
 **Example 2**
 
-1. *Source* – Rathmines 
+1. *Source* – My Location
 
-2. *Destination* – Dublin Spire
+2. *Destination* – UCD
 
 3. *Result* – Currently no event
 
@@ -354,7 +354,7 @@ We followed an Agile project management strategy where we went through six sprin
 
 In addition to the above sprints, we discuss the progress and issues at least every two days over text messaging or Skype. At the end of each week, all of us make sure we meet face to face at UCD mostly to discuss the progress and get ready for the next sprint. Initially we divided ourselves into two teams of 2 and 3 to work on front-end and back-end development respectively. After the second sprint, the whole team took on the responsibility of writing the report and readying the presentation. All 5 of us met at the end of the second sprint and gave inputs on what each of them worked on and came up with the report and the presentation.
 
-**Lessons learned**
+**Challenges and Lessons learned**
 
 -	Project Management – Initially we did not follow any kind of project management methodology, we did not meet regularly and communicated over the phone. We soon realized it did not work at all as we missed the deadlines we had set for the second week regarding the data collection and cleaning phase. We came up with a concrete plan moving ahead, an agile methodology with six sprints. We started communicating more regularly and meeting face to face to make sure we met all the deadlines we set. The front-end and the back-end teams met at least 3 times in a week excluding the team meeting in the weekend and worked on the project. Even though we did not follow a formal method to track the progress of the project and the contributions, strict deadlines were set by the scrum master and we learned the importance of meeting deadlines, achieving shorter goals and in turn completing the intended work on time, the benefits of face to face meetings.
 
