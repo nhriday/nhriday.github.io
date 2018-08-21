@@ -363,6 +363,15 @@ In addition to the above sprints, we discuss the progress and issues at least ev
 
 # Demo
 
+- **User Story 1** – John is using our app for the first time. He logs in or creates a new account as prompted by the app. By selecting the ‘Help’ option from the sidebar, he can view quick instructions on how to use the app
+
+- **User Story 2** – Bruce wants to check if there are any events along his route before he leaves his house. He would like to go to Rathmines. The source is his location, which is the default for any location. He observes that there are no events along his way and traffic will not affected by any events. He continues on his commute
+
+- **User Story 3** – Pamela wants to commute from UCD to Dublin Spire, she uses our app to check for any events along the way. She enters the source and destination and is notified that there is indeed an event along her route and it is a rather large event. She clicks on the marker to find out what the event is. It turns out to be a Football match at the Aviva Stadium and traffic is very high around the venue. She checks the travel times of the primary route and alternate routes and takes a decision on her commuting route.
+
+ - **User Story 4** – Linda is new to Dublin. She is here for the holidays and wants to check if there are any interesting events in the city in the evening. She uses our ‘Event’ feature by selecting the date on the date picker and is shown the events in the city in real-time and information about the events as well. 
+
+
 <video src="nhriday.github.io/Demo.mp4" width="400" height="400" controls preload></video>
 
 # Resources
