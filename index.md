@@ -193,15 +193,15 @@ We created a couple of views to simply complex queries.
  
  **Flask Server (Web API)** - handle the requests from the client and call the Google Maps API for relevant information regarding routes and return the event details by accessing the database depending on the request, which is the date and time entered by the user or system time by default and the route information returned from the Google Maps API. We built the web API using flask, using 3 different URL’s to get 3 distinct results that are relevant to the user. Two URL’s to display the routes and the event info on the map page and one to retrieve the event details on a particular day on the event page.
 
-```**"https://maps.googleapis.com/maps/api/directions/json?origin= + source + "&destination=" + dest + "&alternatives=true&key=" + key**```
+**```"https://maps.googleapis.com/maps/api/directions/json?origin= + source + "&destination=" + dest + "&alternatives=true&key=" + key```**
 
    The source and destination are passed from the android application. The google maps API is accessed and returns the polylines that were used to draw the primary and alternate routes on the map
 
-```**/EventGPS-api/sql/result/<date>/<time>**```
+**```/EventGPS-api/sql/result/<date>/<time>```**
   
    The date and time are passed from the android application. This url is used to access the database which returns the events on the given day and time. The distance between the venue and the route is calculated. If the distance is within the radius we defined, then the url returns the details of the event. (as the event is along the route).
 
-```**/EventGPS-api/events/all/<date>**```
+**```/EventGPS-api/events/all/<date>```**
 
    The date (chosen by the user) is passed from the android application. This URL returns all the events on the particular day.
    
