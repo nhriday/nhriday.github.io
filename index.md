@@ -139,11 +139,9 @@ Along with the radius, we also came up with something known as Pre-start time �
 
   Each call to the API returned 20 events (page-wise). The API allowed maximum of 1000 event band-width; 50 calls (50 pages) to the API were allowed. The collected data was stored as a CSV file.
   
-  •	There were some missing fields in each page like the geo-location of a particular venue, they had to be entered manually using google maps. The data was inconsistent 
+  •	There were some missing fields in each page like the co-ordinate points of a particular venue, they had to be entered manually using google maps. The data was inconsistent 
 
-  •	Geo-locations of venues were missing
-
-  •	Information about some events are available on a partner site; the user is redirected to buy the tickets and event information is available on the partner site.  
+  •	Geo-locations of venues were missing  
 
   •	Basic information including event name, time, date was missing. This is mostly for the smaller events
 
